@@ -48,8 +48,10 @@ v.erase(from_memory_address, to_memory_address); // Ex: v.erase(v.begin());
 v.insert(memory_address, number_of_values, value); // Ex: v.insert(v.begin(), 2);
 
 v.size(); // Returns the size of the vector
+v.pop_back(); // Pop
 v1.swap(v2); // Swaps two vectors
 v.clear(); // Erases the entire vector
+v.empty(); // Returns true if v.size()=0
 
 // Vector with pair
 vector<pair <int,int>> vec;
@@ -84,5 +86,4 @@ for(auto it = v.begin(); it!=v.end(); it++){
 for(auto it : v){
   cout << it << " ";
 }
-
 ```
