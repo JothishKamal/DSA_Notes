@@ -1,4 +1,4 @@
-# Boilerplate Code
+## Boilerplate Code
 
 ```cpp
 #include <bits/stdc++.h>
@@ -15,29 +15,38 @@ int main(void){}
 2. Containers
 3. Functions
 4. Iterators
-### Pairs (kinda like map)
-#### Syntax:
+
+## Pairs (kinda like map): #pairs
+### Syntax:
 
 ```cpp
 pair<int,int> p = {a,b};
 pair<int, pair<int,int> p = {a,{b,c}}; // Nested Pair
-// Pair Methods
-// p.first, p.first.second, p.second, p.second.second
-// Array pair
+```
+### Methods:
+
+```cpp
+p.first, p.first.second, p.second, p.second.second
+```
+### Array Pair:
+
+```cpp
 pair<int,int> arr[]={{a,b},{c,d},{e,f}};
 arr[1].second;
 ```
 
+## Vectors (array of undefined size): #vectors
+### Syntax:
 
-### Vectors (array of undefined size [Similar to list])
-#### Syntax:
 ```cpp
 vector<int> v;
 vector<int> v(a); // a instances of garbage value
 vector<int> v(a,b); // a instances of b
 vector<int> v2(v1); // Copying v1 to v2
+```
+### Methods:
 
-// Methods
+```cpp
 v.push_back(1); // Appends 1 to v
 
 v.emplace_back; // Dynamically increases the size of the vector and appends 2
@@ -52,17 +61,25 @@ v.pop_back(); // Pop
 v1.swap(v2); // Swaps two vectors
 v.clear(); // Erases the entire vector
 v.empty(); // Returns true if v.size()=0
+```
+### Vector with Pair:
 
-// Vector with pair
+```cpp
 vector<pair <int,int>> vec;
 vec.push_back({1,2});
 vec.emplace_back(1,2);
+```
 
-// Accessing vectors
-// 1. Index Method
+### Accessing Vectors:
+#### 1. Index Method:
+
+```cpp
 cout << v[index];
 cout << v.at(index); // Uncommon
-// 2. Iterator Method
+```
+#### 2. Iterator Method:
+
+```cpp
 // Ex: v={1,2,3,4}
 vector<int>::iterator it = v.begin(); // 'it' is pointer. Points to the memory address of 1.
 it++;
@@ -87,3 +104,4 @@ for(auto it : v){
   cout << it << " ";
 }
 ```
+
