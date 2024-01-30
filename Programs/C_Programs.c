@@ -171,3 +171,21 @@ d d d d d
 //     printf("\n");
 //   }
 // }
+
+#include <stdio.h>
+int main(void) {
+    char a[10];
+    char abc[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZA";
+    scanf("%s", a);
+    for (int i = 0; a[i] != '\0'; i++) {
+        if (a[i] != 'A' && a[i] != 'E' && a[i] != 'I' && a[i] != 'O' && a[i] != 'U') {
+            for (int j = 0; j < 26; j++) {
+                if (a[i] == abc[j]) {
+                    a[i] = abc[j + 1];
+                    break;
+                }
+            }
+        }
+    }
+    printf("%s", a);
+}
