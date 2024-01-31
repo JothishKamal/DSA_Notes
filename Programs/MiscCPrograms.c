@@ -72,68 +72,69 @@ Lines = 2660
 // }
 
 // Matrix Multiplication
-#include <stdio.h>
-int main(void){
-  int mA, nA, mB, nB, mC, nC;
+// #include <stdio.h>
+// int main(void){
+//   int mA, nA, mB, nB, mC, nC;
 
-  scanf("%d %d", &mA, &nA);
-  scanf("%d %d", &mB, &nB);
-  scanf("%d %d", &mC, &nC);
+//   scanf("%d %d", &mA, &nA);
+//   scanf("%d %d", &mB, &nB);
+//   scanf("%d %d", &mC, &nC);
   
-  int A[mA][nA], B[mB][nB], C[mC][nC];
-  int A_BC[mA][nC], BC[mB][nC];
-  int AB_C[mA][nC], AB[mA][nB];
+//   int A[mA][nA], B[mB][nB], C[mC][nC];
+//   int A_BC[mA][nC], BC[mB][nC];
+//   int AB_C[mA][nC], AB[mA][nB];
   
-  // Input for Matrix A
-  for(int i=0; i<mA; i++){
-    for(int j=0; j<nA; j++){
-      scanf("%d", &A[i][j]);
-    }
-  }
+//   // Input for Matrix A
+//   for(int i=0; i<mA; i++){
+//     for(int j=0; j<nA; j++){
+//       scanf("%d", &A[i][j]);
+//     }
+//   }
 
-  // Input for Matrix B
-  for(int i=0; i<mB; i++){
-    for(int j=0; j<nB; j++){
-      scanf("%d", &B[i][j]);
-    }
-  }
+//   // Input for Matrix B
+//   for(int i=0; i<mB; i++){
+//     for(int j=0; j<nB; j++){
+//       scanf("%d", &B[i][j]);
+//     }
+//   }
 
-  // Input for Matrix C
-  for(int i=0; i<mC; i++){
-    for(int j=0; j<nC; j++){
-      scanf("%d", &C[i][j]);
-    }
-  }
+//   // Input for Matrix C
+//   for(int i=0; i<mC; i++){
+//     for(int j=0; j<nC; j++){
+//       scanf("%d", &C[i][j]);
+//     }
+//   }
 
-  // A.(B.C)
-  if(nB==mC){
-  } else {
-    printf("Can't Multiply Matrix B and C");
-  }
-  // // Matrix A
-  // printf("\n");
-  // for(int i=0; i<mA; i++){
-  //   for(int j=0; j<nA; j++){
-  //     printf("%d ",A[i][j]);
-  //   }
-  //   printf("\n");
-  // }
+//   // A.(B.C)
+//   if(nB==mC){
+//   } else {
+//     printf("Can't Multiply Matrix B and C");
+//   }
+  
+//   // // Matrix A
+//   // printf("\n");
+//   // for(int i=0; i<mA; i++){
+//   //   for(int j=0; j<nA; j++){
+//   //     printf("%d ",A[i][j]);
+//   //   }
+//   //   printf("\n");
+//   // }
 
-  // // Matrix B
-  // printf("\n");
-  // for(int i=0; i<mB; i++){
-  //   for(int j=0; j<nB; j++){
-  //     printf("%d ",B[i][j]);
-  //   }
-  //   printf("\n");
-  // }
+//   // // Matrix B
+//   // printf("\n");
+//   // for(int i=0; i<mB; i++){
+//   //   for(int j=0; j<nB; j++){
+//   //     printf("%d ",B[i][j]);
+//   //   }
+//   //   printf("\n");
+//   // }
 
-  // // Matrix C
-  // printf("\n");
-  // for(int i=0; i<mC; i++){
-  //   for(int j=0; j<nC; j++){
-  //     printf("%d ",C[i][j]);
-  //   }
-  //   printf("\n");
-  // }
-}
+//   // // Matrix C
+//   // printf("\n");
+//   // for(int i=0; i<mC; i++){
+//   //   for(int j=0; j<nC; j++){
+//   //     printf("%d ",C[i][j]);
+//   //   }
+//   //   printf("\n");
+//   // }
+// }
