@@ -172,20 +172,44 @@ d d d d d
 //   }
 // }
 
-#include <stdio.h>
-int main(void) {
-    char a[10];
-    char abc[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZA";
-    scanf("%s", a);
-    for (int i = 0; a[i] != '\0'; i++) {
-        if (a[i] != 'A' && a[i] != 'E' && a[i] != 'I' && a[i] != 'O' && a[i] != 'U') {
-            for (int j = 0; j < 26; j++) {
-                if (a[i] == abc[j]) {
-                    a[i] = abc[j + 1];
-                    break;
-                }
-            }
-        }
+// Searching an array
+// #include<stdio.h>
+// int main(void){
+//     int n,e;
+//     scanf("%d",&n);
+//     int a[n];
+//     for(int i=0; i<n; i++) scanf("%d",&a[i]);
+//     printf("Enter the Element to be searched: ");
+//     scanf("%d",&e);
+//     for(int i=0; i<n; i++){
+//       if (a[i]==e){
+//         printf("\n%d found at %d",e,i);
+//       }
+//     }
+// }
+
+/* HW
+1. Insertion
+2. Deletion (find and delete first occurence)
+3. Display
+4. Search
+*/
+
+
+/*
+Char Arrays(Strings)
+'\0' - NULL Character
+*/
+#include<stdio.h>
+#include<string.h>
+int main(void){
+  char name[20],c1,c2;
+  fgets(name,20,stdin);
+  name[strlen(name)-1]='\0';
+  scanf("%c %c",&c1,&c2);
+  for(int i=0; name[i]!='\0'; i++) 
+    if(name[i]==c1){
+      name[i]=c2;
     }
-    printf("%s", a);
+  printf("%s",name);
 }
