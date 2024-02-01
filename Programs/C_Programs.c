@@ -194,22 +194,77 @@ d d d d d
 3. Display
 4. Search
 */
+#include<stdio.h>
+int main(void){
+  int n;
+  printf("Enter the size of the array: ");
+  scanf("%d",&n);
+  int a[n];
+  for(int i=0; i<n; i++){
+    a[i]=NULL;
+  }
+
+  do{
+    int ch,index,x,temp;
+    printf("\n1. Insert an element at specified index");
+    printf("\n2. Search and delete the first occurence element");
+    printf("\n3. Display the array");
+    printf("\n4. Search for an element");
+    printf("\n5. Exit");
+    scanf("%d",&ch);
+
+    switch(ch){
+      case 1:
+        printf("Enter the element to be inserted: ");
+        scanf("%d",&x);
+        printf("Enter the index: ");
+        scanf("%d",&index);
+        if(index>n-1 || index<0) printf("Invalid index");
+        else {
+          if(a[index]==NULL) a[index]=x;
+          else{
+          }
+        }
+        
+      break;
+
+      case 2:
+      break;
+      
+      case 3:
+      break;
+      
+      case 4:
+      break;
+      
+      case 5:
+      break;
+      
+      default:
+        printf("Invalid choice");
+    }
+  
+  if (ch==5) break;
+
+  } while(1);
+}
+
 
 
 /*
 Char Arrays(Strings)
 '\0' - NULL Character
 */
-#include<stdio.h>
-#include<string.h>
-int main(void){
-  char name[20],c1,c2;
-  fgets(name,20,stdin);
-  name[strlen(name)-1]='\0';
-  scanf("%c %c",&c1,&c2);
-  for(int i=0; name[i]!='\0'; i++) 
-    if(name[i]==c1){
-      name[i]=c2;
-    }
-  printf("%s",name);
-}
+// #include<stdio.h>
+// #include<string.h>
+// int main(void){
+//   char name[20],c1,c2;
+//   fgets(name,20,stdin);
+//   name[strlen(name)-1]='\0';
+//   scanf("%c %c",&c1,&c2);
+//   for(int i=0; name[i]!='\0'; i++) 
+//     if(name[i]==c1){
+//       name[i]=c2;
+//     }
+//   printf("%s",name);
+// }
