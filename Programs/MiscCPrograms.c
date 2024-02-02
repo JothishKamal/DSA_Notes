@@ -211,3 +211,11 @@ int main(void){
 //     printf("%d", sum);
 //   } else printf("Invalid");
 // }
+
+#include<stdio.h>
+int main(void){
+  int n;
+  scanf("%d",&n);
+  int a[n];
+  
+}

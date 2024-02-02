@@ -194,60 +194,62 @@ d d d d d
 3. Display
 4. Search
 */
-#include<stdio.h>
-int main(void){
-  int n;
-  printf("Enter the size of the array: ");
-  scanf("%d",&n);
-  int a[n];
-  for(int i=0; i<n; i++){
-    a[i]=NULL;
-  }
+// #include<stdio.h>
+// int main(void){
+//   int n;
+//   printf("Enter the size of the array: ");
+//   scanf("%d",&n);
+//   int a[n];
+//   for(int i=0; i<n; i++){
+//     a[i]=NULL;
+//   }
 
-  do{
-    int ch,index,x,temp;
-    printf("\n1. Insert an element at specified index");
-    printf("\n2. Search and delete the first occurence element");
-    printf("\n3. Display the array");
-    printf("\n4. Search for an element");
-    printf("\n5. Exit");
-    scanf("%d",&ch);
+//   do{
+//     int ch,index,x,temp;
+//     printf("\n1. Insert an element at specified index");
+//     printf("\n2. Search and delete the first occurence of an element");
+//     printf("\n3. Display the array");
+//     printf("\n4. Search for an element");
+//     printf("\n5. Exit");
+//     printf("\nEnter your choice: ");
+//     scanf("%d",&ch);
 
-    switch(ch){
-      case 1:
-        printf("Enter the element to be inserted: ");
-        scanf("%d",&x);
-        printf("Enter the index: ");
-        scanf("%d",&index);
-        if(index>n-1 || index<0) printf("Invalid index");
-        else {
-          if(a[index]==NULL) a[index]=x;
-          else{
-          }
-        }
-        
-      break;
+//     switch(ch){
+//       case 1:
+//         printf("Enter the element to be inserted: ");
+//         scanf("%d",&x);
+//         printf("Enter the index: ");
+//         scanf("%d",&index);
+//         if(a[index]==NULL) a[index]=x;
+//         else{
 
-      case 2:
-      break;
+//         }
+//       break;
+
+//       case 2:
+//       break;
       
-      case 3:
-      break;
+//       case 3:
+//       for(int i=0; i<n; i++){
+//         printf("%d ",a[i]);
+
+//       }
+//       break;
       
-      case 4:
-      break;
+//       case 4:
+//       break;
       
-      case 5:
-      break;
+//       case 5:
+//       break;
       
-      default:
-        printf("Invalid choice");
-    }
+//       default:
+//         printf("Invalid choice");
+//     }
   
-  if (ch==5) break;
+//   if (ch==5) break;
 
-  } while(1);
-}
+//   } while(1);
+// }
 
 
 
@@ -268,3 +270,73 @@ Char Arrays(Strings)
 //     }
 //   printf("%s",name);
 // }
+
+
+/* Sum,Avg,Max,Min of a matrix */
+// #include<stdio.h>
+// int main(void){
+//   int m,n,sum=0,min,max;
+//   scanf("%d %d", &m, &n);
+//   int mat[m][n];
+//   for(int i=0; i<m; i++){
+//     for(int j=0; j<n; j++){
+//       scanf("%d",&mat[i][j]);
+//     }
+//   }
+
+//   for(int i=0; i<m; i++){
+//     for(int j=0; j<n; j++){
+//       if(i==0 && j==0){
+//         min=mat[i][j];
+//         max=mat[i][j];
+//       }
+//       if(mat[i][j]>max){
+//         max=mat[i][j];
+//       }
+//       if(mat[i][j]<min){
+//         min=mat[i][j];
+//       }
+//       sum+=mat[i][j];
+//     }
+//   }
+
+//   int avg=sum/(m*n);
+//   printf("Sum=%d",sum);
+//   printf("\nAvg=%d",avg);
+//   printf("\nMax=%d",max);
+//   printf("\nMin=%d",min);
+//   // for(int i=0; i<m; i++){
+//   //   for(int j=0; j<n; j++){
+//   //     printf("%d",mat[i][j]);
+//   //   }
+//   // }
+// }
+
+#include<stdio.h>
+int main(void){
+  int m1,n1,m2,n2;
+  scanf("%d %d",&m1,&n1);
+  scanf("%d %d",&m2,&n2);
+  int a[m1][n1],b[m2][n2],;
+
+
+  for(int i=0; i<m1; i++){
+    for(int j=0; j<n1; j++) scanf("%d",&a[i][j]);
+  }
+
+  // a
+  for(int i=0; i<m1; i++){
+    for(int j=0; j<n1; j++) printf("%d ",a[i][j]);
+    printf("\n");
+  }
+
+  for(int i=0; i<m2; i++){
+    for(int j=0; j<n2; j++) scanf("%d",&b[i][j]);
+  }
+
+  if(m1==m2 && n1==n2){
+    for(int i=0; i<m1; i++){
+      for(int j=0; j<n1; j++) a[i][j]+=b[i][j];
+  }
+  }
+}
