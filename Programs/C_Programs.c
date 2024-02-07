@@ -194,58 +194,58 @@ d d d d d
 3. Display
 4. Search
 */
-#include<stdio.h>
-int main(void){
-  int n;
-  printf("Enter the size of the array: ");
-  scanf("%d",&n);
-  int a[n];
-  for(int i=0; i<n; i++){
-    a[i]=NULL;
-  }
+// #include<stdio.h>
+// int main(void){
+//   int n;
+//   printf("Enter the size of the array: ");
+//   scanf("%d",&n);
+//   int a[n];
+//   for(int i=0; i<n; i++){
+//     a[i]=NULL;
+//   }
 
-  do{
-    int ch,index,x,temp;
-    printf("\n1. Insert an element at specified index");
-    printf("\n2. Search and delete the first occurence of an element");
-    printf("\n3. Display the array");
-    printf("\n4. Search for an element");
-    printf("\n5. Exit");
-    printf("\nEnter your choice: ");
-    scanf("%d",&ch);
+//   do{
+//     int ch,index,x,temp;
+//     printf("\n1. Insert an element at specified index");
+//     printf("\n2. Search and delete the first occurence of an element");
+//     printf("\n3. Display the array");
+//     printf("\n4. Search for an element");
+//     printf("\n5. Exit");
+//     printf("\nEnter your choice: ");
+//     scanf("%d",&ch);
 
-    switch(ch){
-      case 1:
-        printf("Enter the element to be inserted: ");
-        scanf("%d",&x);
-        printf("Enter the index: ");
-        scanf("%d",&index);
-      break;
+//     switch(ch){
+//       case 1:
+//         printf("Enter the element to be inserted: ");
+//         scanf("%d",&x);
+//         printf("Enter the index: ");
+//         scanf("%d",&index);
+//       break;
 
-      case 2:
-      break;
+//       case 2:
+//       break;
       
-      case 3:
-      for(int i=0; i<n; i++){
-        printf("%d ",a[i]);
+//       case 3:
+//       for(int i=0; i<n; i++){
+//         printf("%d ",a[i]);
 
-      }
-      break;
+//       }
+//       break;
       
-      case 4:
-      break;
+//       case 4:
+//       break;
       
-      case 5:
-      break;
+//       case 5:
+//       break;
       
-      default:
-        printf("Invalid choice");
-    }
+//       default:
+//         printf("Invalid choice");
+//     }
   
-  if (ch==5) break;
+//   if (ch==5) break;
 
-  } while(1);
-}
+//   } while(1);
+// }
 
 
 
@@ -360,3 +360,25 @@ Char Arrays(Strings)
 //   else printf("Not a Sparse Matrix");
 // }
 
+#include<stdio.h>
+#include<stdlib.h>
+int fibonacci(int n, int n1, int n2){
+  int n3;
+  if(n>2){
+    n3=n1+n2;
+    printf("%d ",n3);
+    fibonacci(n-1,n2,n3);
+  } 
+}
+int main(void){
+  int n,n1=0,n2=1;
+  scanf("%d",&n);
+  printf("%d %d ",n1,n2);
+  fibonacci(n,n1,n2);
+  // for(int i=0; i<n-1; i++){
+  //   n3=n1+n2;
+  //   n1=n2;
+  //   n2=n3;
+  //   printf("%d ",n3);
+  // }
+}
