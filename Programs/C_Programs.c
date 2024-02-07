@@ -194,62 +194,58 @@ d d d d d
 3. Display
 4. Search
 */
-// #include<stdio.h>
-// int main(void){
-//   int n;
-//   printf("Enter the size of the array: ");
-//   scanf("%d",&n);
-//   int a[n];
-//   for(int i=0; i<n; i++){
-//     a[i]=NULL;
-//   }
+#include<stdio.h>
+int main(void){
+  int n;
+  printf("Enter the size of the array: ");
+  scanf("%d",&n);
+  int a[n];
+  for(int i=0; i<n; i++){
+    a[i]=NULL;
+  }
 
-//   do{
-//     int ch,index,x,temp;
-//     printf("\n1. Insert an element at specified index");
-//     printf("\n2. Search and delete the first occurence of an element");
-//     printf("\n3. Display the array");
-//     printf("\n4. Search for an element");
-//     printf("\n5. Exit");
-//     printf("\nEnter your choice: ");
-//     scanf("%d",&ch);
+  do{
+    int ch,index,x,temp;
+    printf("\n1. Insert an element at specified index");
+    printf("\n2. Search and delete the first occurence of an element");
+    printf("\n3. Display the array");
+    printf("\n4. Search for an element");
+    printf("\n5. Exit");
+    printf("\nEnter your choice: ");
+    scanf("%d",&ch);
 
-//     switch(ch){
-//       case 1:
-//         printf("Enter the element to be inserted: ");
-//         scanf("%d",&x);
-//         printf("Enter the index: ");
-//         scanf("%d",&index);
-//         if(a[index]==NULL) a[index]=x;
-//         else{
+    switch(ch){
+      case 1:
+        printf("Enter the element to be inserted: ");
+        scanf("%d",&x);
+        printf("Enter the index: ");
+        scanf("%d",&index);
+      break;
 
-//         }
-//       break;
-
-//       case 2:
-//       break;
+      case 2:
+      break;
       
-//       case 3:
-//       for(int i=0; i<n; i++){
-//         printf("%d ",a[i]);
+      case 3:
+      for(int i=0; i<n; i++){
+        printf("%d ",a[i]);
 
-//       }
-//       break;
+      }
+      break;
       
-//       case 4:
-//       break;
+      case 4:
+      break;
       
-//       case 5:
-//       break;
+      case 5:
+      break;
       
-//       default:
-//         printf("Invalid choice");
-//     }
+      default:
+        printf("Invalid choice");
+    }
   
-//   if (ch==5) break;
+  if (ch==5) break;
 
-//   } while(1);
-// }
+  } while(1);
+}
 
 
 
@@ -312,31 +308,55 @@ Char Arrays(Strings)
 //   // }
 // }
 
-#include<stdio.h>
-int main(void){
-  int m1,n1,m2,n2;
-  scanf("%d %d",&m1,&n1);
-  scanf("%d %d",&m2,&n2);
-  int a[m1][n1],b[m2][n2],;
+// #include<stdio.h>
+// int main(void){
+//   int m,n;
+//   scanf("%d %d",&m,&n);
 
+//   int a[m][n];
+//   for(int i=0;i<m;i++){
+//     for(int j=0; j<n;j++){
+//       scanf("%d",&a[i][j]);
+//     }
+//   }
+  
+//   // // Minor/Left Diagonal
+//   // for(int i=0;i<m;i++){
+//   //   for(int j=n-1; j>=0;j--){
+//   //     printf("%d",a[i][j]);
+//   //   }
+//   // }
 
-  for(int i=0; i<m1; i++){
-    for(int j=0; j<n1; j++) scanf("%d",&a[i][j]);
-  }
+//   // Outer Elements
+//   for(int i=0; i<m; i++){
+//     for(int j=0; j<n; j++){
+//       if(i==0 || i==m-1) printf("%d",a[i][j]);
+//     } 
+//     printf("%d %d ",a[i][0],a[i][n-1]);
+//     printf("\n");
+//   }
+// }
 
-  // a
-  for(int i=0; i<m1; i++){
-    for(int j=0; j<n1; j++) printf("%d ",a[i][j]);
-    printf("\n");
-  }
+// Sparse matrix = Number of zero elements>Number of elements
+// #include<stdio.h>
+// int main(void){
+//   int m,n,ct,zct=0;
+//   scanf("%d %d", &m,&n);
+//   int a[m][n];
+  
+//   for(int i=0; i<m; i++){
+//     for(int j=0; j<n; j++){
+//       scanf("%d",&a[i][j]);
+//     }
+//   }
 
-  for(int i=0; i<m2; i++){
-    for(int j=0; j<n2; j++) scanf("%d",&b[i][j]);
-  }
+//   for(int i=0; i<m; i++){
+//     for(int j=0; j<n; j++){
+//       if(a[i][j]==0) zct+=1;
+//     }
+//   }
 
-  if(m1==m2 && n1==n2){
-    for(int i=0; i<m1; i++){
-      for(int j=0; j<n1; j++) a[i][j]+=b[i][j];
-  }
-  }
-}
+//   if(zct>=((float)2/3)*m*n) printf("Sparse Matrix");
+//   else printf("Not a Sparse Matrix");
+// }
+

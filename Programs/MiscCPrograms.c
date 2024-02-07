@@ -72,113 +72,113 @@ Lines = 2660
 // }
 
 // Matrix Multiplication
-#include <stdio.h>
-int main(void){
-  int mA, nA, mB, nB, mC, nC;
-  int temp_sum, ct;
-  scanf("%d %d", &mA, &nA);
-  scanf("%d %d", &mB, &nB);
-  scanf("%d %d", &mC, &nC);
+// #include <stdio.h>
+// int main(void){
+//   int mA, nA, mB, nB, mC, nC;
+//   int temp_sum, ct;
+//   scanf("%d %d", &mA, &nA);
+//   scanf("%d %d", &mB, &nB);
+//   scanf("%d %d", &mC, &nC);
   
-  int A[mA][nA], B[mB][nB], C[mC][nC];
-  int A_BC[mA][nC], BC[mB][nC];
-  int AB_C[mA][nC], AB[mA][nB];
+//   int A[mA][nA], B[mB][nB], C[mC][nC];
+//   int A_BC[mA][nC], BC[mB][nC];
+//   int AB_C[mA][nC], AB[mA][nB];
   
-  // Input for Matrix A
-  for(int i=0; i<mA; i++){
-    for(int j=0; j<nA; j++){
-      scanf("%d", &A[i][j]);
-    }
-  }
+//   // Input for Matrix A
+//   for(int i=0; i<mA; i++){
+//     for(int j=0; j<nA; j++){
+//       scanf("%d", &A[i][j]);
+//     }
+//   }
 
-  // Input for Matrix B
-  for(int i=0; i<mB; i++){
-    for(int j=0; j<nB; j++){
-      scanf("%d", &B[i][j]);
-    }
-  }
+//   // Input for Matrix B
+//   for(int i=0; i<mB; i++){
+//     for(int j=0; j<nB; j++){
+//       scanf("%d", &B[i][j]);
+//     }
+//   }
 
-  // Input for Matrix C
-  for(int i=0; i<mC; i++){
-    for(int j=0; j<nC; j++){
-      scanf("%d", &C[i][j]);
-    }
-  }
+//   // Input for Matrix C
+//   for(int i=0; i<mC; i++){
+//     for(int j=0; j<nC; j++){
+//       scanf("%d", &C[i][j]);
+//     }
+//   }
 
-  printf("\n");
+//   printf("\n");
 
-  // LHS
-  if(nB==mC){
-    for(int i=0; i<mB; i++){
-      for(int j=0; j<nC; j++){
-        temp_sum=0;
-        for(int k=0; k<mC; k++){
-          temp_sum+=B[i][k]*C[k][j];
-        }
-        BC[i][j]=temp_sum;
-      }
-    }
+//   // LHS
+//   if(nB==mC){
+//     for(int i=0; i<mB; i++){
+//       for(int j=0; j<nC; j++){
+//         temp_sum=0;
+//         for(int k=0; k<mC; k++){
+//           temp_sum+=B[i][k]*C[k][j];
+//         }
+//         BC[i][j]=temp_sum;
+//       }
+//     }
     
-    // A.(B.C)
-    if(nA==mB){
-      for(int i=0; i<mA; i++){
-        for(int j=0; j<nC; j++){
-          temp_sum=0;
-          for(int k=0; k<mB; k++){
-            temp_sum+=A[i][k]*BC[k][j];
-          }
-          A_BC[i][j]=temp_sum;
-        }
-      }
-    } else printf("\nCan't Multiply Matrix A and B.C");
+//     // A.(B.C)
+//     if(nA==mB){
+//       for(int i=0; i<mA; i++){
+//         for(int j=0; j<nC; j++){
+//           temp_sum=0;
+//           for(int k=0; k<mB; k++){
+//             temp_sum+=A[i][k]*BC[k][j];
+//           }
+//           A_BC[i][j]=temp_sum;
+//         }
+//       }
+//     } else printf("\nCan't Multiply Matrix A and B.C");
 
-  } else printf("\nCan't Multiply Matrix B and C");
+//   } else printf("\nCan't Multiply Matrix B and C");
   
-  // RHS
-  if(nA==mB){
-    for(int i=0; i<mA; i++){
-      for(int j=0; j<nB; j++){
-        temp_sum=0;
-        for(int k=0; k<mB; k++){
-          temp_sum+=A[i][k]*B[k][j];
-        }
-        AB[i][j]=temp_sum;
-      }
-    }
+//   // RHS
+//   if(nA==mB){
+//     for(int i=0; i<mA; i++){
+//       for(int j=0; j<nB; j++){
+//         temp_sum=0;
+//         for(int k=0; k<mB; k++){
+//           temp_sum+=A[i][k]*B[k][j];
+//         }
+//         AB[i][j]=temp_sum;
+//       }
+//     }
     
-    // (A.B).C
-    if(nB==mC){
-      for(int i=0; i<mA; i++){
-        for(int j=0; j<nC; j++){
-          temp_sum=0;
-          for(int k=0; k<mC; k++){
-            temp_sum+=AB[i][k]*C[k][j];
-          }
-          AB_C[i][j]=temp_sum;
-        }
-      } 
-    } else printf("\nCan't Multiply Matrix A.B and C");
+//     // (A.B).C
+//     if(nB==mC){
+//       for(int i=0; i<mA; i++){
+//         for(int j=0; j<nC; j++){
+//           temp_sum=0;
+//           for(int k=0; k<mC; k++){
+//             temp_sum+=AB[i][k]*C[k][j];
+//           }
+//           AB_C[i][j]=temp_sum;
+//         }
+//       } 
+//     } else printf("\nCan't Multiply Matrix A.B and C");
 
-  } else printf("\nCan't Multiply Matrix A and B");
+//   } else printf("\nCan't Multiply Matrix A and B");
 
 
-  for(int i=0; i<mA; i++){
-    for(int j=0; j<nC; j++){
-      if(A_BC[i][j]==AB_C[i][j]) ct+=1;
-    }
-  }
+//   for(int i=0; i<mA; i++){
+//     for(int j=0; j<nC; j++){
+//       if(A_BC[i][j]==AB_C[i][j]) ct+=1;
+//     }
+//   }
 
-  if(ct==(mA*nC)){
-    printf("Associative Law is true for Matrices A,B and C");
-  }
+//   if(ct==(mA*nC)){
+//     printf("Associative Law is true for Matrices A,B and C");
+//   }
 
-  printf("\nThe Resultant Matrix is: ");
-  for(int i=0; i<mA; i++){
-    for(int j=0; j<nC; j++){
-      printf("\n%d",AB_C[i][j]);
-    }
-  }
-}
+//   printf("\nThe Resultant Matrix is: ");
+//   for(int i=0; i<mA; i++){
+//     for(int j=0; j<nC; j++){
+//       printf("\n%d",AB_C[i][j]);
+//     }
+//   }
+// }
 
 
 // #include<stdio.h>
@@ -211,11 +211,3 @@ int main(void){
 //     printf("%d", sum);
 //   } else printf("Invalid");
 // }
-
-#include<stdio.h>
-int main(void){
-  int n;
-  scanf("%d",&n);
-  int a[n];
-  
-}
