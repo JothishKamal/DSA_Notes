@@ -211,3 +211,10 @@ Lines = 2660
 //     printf("%d", sum);
 //   } else printf("Invalid");
 // }
+
+#include<stdio.h>
+int main(void){
+  char a[4][4]={"a","b","c","d"};
+  char **pp=a;
+  printf("%p",pp);
+}

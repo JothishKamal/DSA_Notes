@@ -28,24 +28,24 @@
 // }
 
 //// PPS1.3
-#include<stdio.h>
-int main(void){
-  int m,n;
-  scanf("%d %d",&m,&n);
-  int a[m][n];
-  for(int i=0; i<m; i++){
-    for(int j=0; j<n; j++){
-      scanf("%d",&a[i][j]);
-    }
-  }
+// #include<stdio.h>
+// int main(void){
+//   int m,n;
+//   scanf("%d %d",&m,&n);
+//   int a[m][n];
+//   for(int i=0; i<m; i++){
+//     for(int j=0; j<n; j++){
+//       scanf("%d",&a[i][j]);
+//     }
+//   }
   
-  for(int i=0; i<n; i++){
-    for(int j=0; j<m; j++){
-      printf("%d ",a[j][i]);
-    }
-    printf("\n");
-  }
-}
+//   for(int i=0; i<n; i++){
+//     for(int j=0; j<m; j++){
+//       printf("%d ",a[j][i]);
+//     }
+//     printf("\n");
+//   }
+// }
 
 //// PPS1.4
 // #include<stdio.h>
@@ -101,32 +101,32 @@ int main(void){
 // }
 
 //// PPS1.6
-#include<stdio.h>
-int odd(int a[],int n){
-  int odd=0;
-  for(int *ptr=a,i=0; i<n; i++){
-    if(ptr[i]%2!=0) odd+=1;
-  }
-  return odd;
-}
+// #include<stdio.h>
+// int odd(int a[],int n){
+//   int odd=0;
+//   for(int *ptr=a,i=0; i<n; i++){
+//     if(ptr[i]%2!=0) odd+=1;
+//   }
+//   return odd;
+// }
 
-int even(int a[],int n){
-  int even=0;
-  for(int *ptr=a,i=0; i<n; i++){
-    if(ptr[i]%2==0) even+=1;
-  }
-  return even;
-}
+// int even(int a[],int n){
+//   int even=0;
+//   for(int *ptr=a,i=0; i<n; i++){
+//     if(ptr[i]%2==0) even+=1;
+//   }
+//   return even;
+// }
 
-int main(void){
-  int n;
-  scanf("%d",&n);
-  int a[5];
-  for(int i=0; i<n; i++){
-    scanf("%d",&a[i]);
-  }
-  printf("%d %d",odd(a,n),even(a,n));
-}
+// int main(void){
+//   int n;
+//   scanf("%d",&n);
+//   int a[5];
+//   for(int i=0; i<n; i++){
+//     scanf("%d",&a[i]);
+//   }
+//   printf("%d %d",odd(a,n),even(a,n));
+// }
 
 //// PPS1.7
 // #include<stdio.h>

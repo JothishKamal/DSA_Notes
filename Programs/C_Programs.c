@@ -360,25 +360,3 @@ Char Arrays(Strings)
 //   else printf("Not a Sparse Matrix");
 // }
 
-#include<stdio.h>
-#include<stdlib.h>
-int fibonacci(int n, int n1, int n2){
-  int n3;
-  if(n>2){
-    n3=n1+n2;
-    printf("%d ",n3);
-    fibonacci(n-1,n2,n3);
-  } 
-}
-int main(void){
-  int n,n1=0,n2=1;
-  scanf("%d",&n);
-  printf("%d %d ",n1,n2);
-  fibonacci(n,n1,n2);
-  // for(int i=0; i<n-1; i++){
-  //   n3=n1+n2;
-  //   n1=n2;
-  //   n2=n3;
-  //   printf("%d ",n3);
-  // }
-}
