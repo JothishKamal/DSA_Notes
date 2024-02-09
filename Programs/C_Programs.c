@@ -360,3 +360,10 @@ Char Arrays(Strings)
 //   else printf("Not a Sparse Matrix");
 // }
 
+#include<stdio.h>
+int main(void){
+  int n=69;
+  int *p=&n;
+  printf("%p ",p);
+  printf("%X",p);
+}
