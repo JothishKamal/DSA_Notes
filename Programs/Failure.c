@@ -50,4 +50,6 @@ int main(void){
   } else {
     printf("\nData not present");
   }
+  free(arr.a);
+  free(a);
 }
