@@ -360,10 +360,40 @@ Char Arrays(Strings)
 //   else printf("Not a Sparse Matrix");
 // }
 
+// #include<stdio.h>
+// int fact(int n){
+//   if(n==1 || n==0){
+//     return 1;
+//   } else return n*fact(n-1);
+// }
+// int (*p)(int)=fact;
+// int main(void){
+//   int n=5;
+//   p=fact;
+//   printf("%d",p(n));
+// }
+
 #include<stdio.h>
 int main(void){
-  int n=69;
-  int *p=&n;
-  printf("%p ",p);
-  printf("%X",p);
+  float a[4]={1,2,2,3},b[3];
+  for(int i=0,x=0; i<4; i++){
+     int k=0;
+    //  if (i==0){
+    //      printf("%.2f ",a[i]);
+    //  }
+    for(int j=0; j<=i; j++){
+      if(a[i]!=a[j]){
+          k+=1;
+        }
+          if (k==i){
+            b[x]=a[i];
+            x++;
+            break;
+          }
+        
+    }
+  }
+   for(int i=0; i<8; i++){
+     printf("%.2f ",b[i]);
+   }
 }

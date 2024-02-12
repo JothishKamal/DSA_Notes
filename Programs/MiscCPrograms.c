@@ -213,7 +213,17 @@ Lines = 2660
 // }
 
 #include<stdio.h>
-
 int main(void){
-  char a[][]
+  float a[4]={1,2,2,2},b[4];
+  for(int i=0,x=0; i<4; i++){
+    for(int j=0; j<4; j++){
+      if(a[i]!=b[j]){
+        b[x]=a[i];
+        x++;
+      }
+    }
+  }
+  for(int i=0; i<4; i++){
+    printf("%.2f ",b[i]);
+  }
 }
