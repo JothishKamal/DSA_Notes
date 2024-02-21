@@ -373,27 +373,35 @@ Char Arrays(Strings)
 //   printf("%d",p(n));
 // }
 
+// #include<stdio.h>
+// int main(void){
+//   float a[4]={1,2,2,3},b[3];
+//   for(int i=0,x=0; i<4; i++){
+//      int k=0;
+//     //  if (i==0){
+//     //      printf("%.2f ",a[i]);
+//     //  }
+//     for(int j=0; j<=i; j++){
+//       if(a[i]!=a[j]){
+//           k+=1;
+//         }
+//           if (k==i){
+//             b[x]=a[i];
+//             x++;
+//             break;
+//           }
+        
+//     }
+//   }
+//    for(int i=0; i<8; i++){
+//      printf("%.2f ",b[i]);
+//    }
+// }
+
 #include<stdio.h>
 int main(void){
-  float a[4]={1,2,2,3},b[3];
-  for(int i=0,x=0; i<4; i++){
-     int k=0;
-    //  if (i==0){
-    //      printf("%.2f ",a[i]);
-    //  }
-    for(int j=0; j<=i; j++){
-      if(a[i]!=a[j]){
-          k+=1;
-        }
-          if (k==i){
-            b[x]=a[i];
-            x++;
-            break;
-          }
-        
-    }
+  char mat[2][3];
+  for(int i=0; i<2; i++){
+    fgets(&mat[i],3,stdin);
   }
-   for(int i=0; i<8; i++){
-     printf("%.2f ",b[i]);
-   }
 }
