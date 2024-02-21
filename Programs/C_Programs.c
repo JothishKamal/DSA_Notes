@@ -360,17 +360,19 @@ Char Arrays(Strings)
 //   else printf("Not a Sparse Matrix");
 // }
 
+// Function Pointer
 // #include<stdio.h>
 // int fact(int n){
 //   if(n==1 || n==0){
 //     return 1;
 //   } else return n*fact(n-1);
 // }
-// int (*p)(int)=fact;
 // int main(void){
+//   int (*p)(int)=fact;
 //   int n=5;
 //   p=fact;
-//   printf("%d",p(n));
+//   printf("%d ",p(n));
+//   printf("%d",(*p)(n+1));
 // }
 
 // #include<stdio.h>
@@ -399,9 +401,18 @@ Char Arrays(Strings)
 // }
 
 #include<stdio.h>
-int main(void){
-  char mat[2][3];
-  for(int i=0; i<2; i++){
-    fgets(&mat[i],3,stdin);
+#include<stdlib.h>
+void sqr(int *a, int n){
+  for(int i=0; i<n; i++){
+    a[i]=a[i]*a[i];
   }
+}
+int main(void){
+  int n;
+  scanf("%d",&n);
+  int *a=(int *)malloc(n*sizeof(int));
+  void (*f)(int*,int)=sqr;
+  for(int i=0; i<n; i++) scanf("%d",&a[i]);
+  f(a,n);
+  for(int i=0; i<n; i++) printf("%d",a[i]);
 }
