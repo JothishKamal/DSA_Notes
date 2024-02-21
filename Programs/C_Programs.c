@@ -402,17 +402,21 @@ Char Arrays(Strings)
 
 #include<stdio.h>
 #include<stdlib.h>
-void sqr(int *a, int n){
+int *sqr(int *a, int n){
+  int *b=(int *)malloc(n*sizeof(int));
   for(int i=0; i<n; i++){
-    a[i]=a[i]*a[i];
+    b[i]=a[i]*a[i];
   }
+  return b;
 }
 int main(void){
   int n;
   scanf("%d",&n);
   int *a=(int *)malloc(n*sizeof(int));
-  void (*f)(int*,int)=sqr;
+  int *(*f)(int*,int)=sqr;
   for(int i=0; i<n; i++) scanf("%d",&a[i]);
-  f(a,n);
-  for(int i=0; i<n; i++) printf("%d",a[i]);
+  int *b=f(a,n);
+  for(int i=0; i<n; i++) printf("%d",b[i]);
+  free(a);
+  free(b);
 }
