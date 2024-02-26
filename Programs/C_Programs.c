@@ -375,48 +375,56 @@ Char Arrays(Strings)
 //   printf("%d",(*p)(n+1));
 // }
 
+// Function Pointer x2
 // #include<stdio.h>
-// int main(void){
-//   float a[4]={1,2,2,3},b[3];
-//   for(int i=0,x=0; i<4; i++){
-//      int k=0;
-//     //  if (i==0){
-//     //      printf("%.2f ",a[i]);
-//     //  }
-//     for(int j=0; j<=i; j++){
-//       if(a[i]!=a[j]){
-//           k+=1;
-//         }
-//           if (k==i){
-//             b[x]=a[i];
-//             x++;
-//             break;
-//           }
-        
-//     }
+// #include<stdlib.h>
+// int *sqr(int *a, int n){
+//   int *b=(int *)malloc(n*sizeof(int));
+//   for(int i=0; i<n; i++){
+//     b[i]=a[i]*a[i];
 //   }
-//    for(int i=0; i<8; i++){
-//      printf("%.2f ",b[i]);
-//    }
+//   return b;
+// }
+// int main(void){
+//   int n;
+//   scanf("%d",&n);
+//   int *a=(int *)malloc(n*sizeof(int));
+//   int *(*f)(int*,int)=sqr;
+//   for(int i=0; i<n; i++) scanf("%d",&a[i]);
+//   int *b=f(a,n);
+//   for(int i=0; i<n; i++) printf("%d",b[i]);
+//   free(a);
+//   free(b);
 // }
 
-#include<stdio.h>
-#include<stdlib.h>
-int *sqr(int *a, int n){
-  int *b=(int *)malloc(n*sizeof(int));
-  for(int i=0; i<n; i++){
-    b[i]=a[i]*a[i];
-  }
-  return b;
-}
-int main(void){
-  int n;
-  scanf("%d",&n);
-  int *a=(int *)malloc(n*sizeof(int));
-  int *(*f)(int*,int)=sqr;
-  for(int i=0; i<n; i++) scanf("%d",&a[i]);
-  int *b=f(a,n);
-  for(int i=0; i<n; i++) printf("%d",b[i]);
-  free(a);
-  free(b);
-}
+// Selection Sort
+// #include<stdio.h>
+// int main(void){
+//   int a[4]={1,4,2,3};
+//   int max,temp;
+//   for(int i=0; i<4; i++){
+//     max=0;
+//     for(int j=1;j<4-i;j++) max=j;
+//     temp=a[max];
+//   }
+// }
+
+// #include<stdio.h>
+// typedef struct{
+//   int real,imag;
+// }complexNum;
+// complexNum add(complexNum x1,complexNum x2){
+//   x1.real+=x2.real;
+//   x1.imag+=x2.imag;
+//   return x1;
+// }
+// int main(void){
+//   complexNum x1,x2;
+//   complexNum (*f)(complexNum,complexNum)=add;
+//   scanf("%d",&x1.real);
+//   scanf("%d",&x1.imag);
+//   scanf("%d",&x2.real);
+//   scanf("%d",&x2.imag);
+//   x1=f(x1,x2);
+//   printf("%d+%di",x1.real,x1.imag);
+// }

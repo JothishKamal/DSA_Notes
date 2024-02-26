@@ -2,29 +2,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-int *Score(int *,int);
-// Testing Code
-int main(void){
-	int n;
-  scanf("%d",&n);
-  int a[n];
-  for(int i=0; i<n; i++) scanf("%d",&a[i]);
-  int *maxScore=Score(a,n); 
-  printf("%d",*maxScore);
-}
-int *Score(int *a,int n){
-  int temp;
-  for(int i=0; i<n; i++){
-    for(int j=0; j<n-1; j++){
-      if(a[j]>a[j+1]){
-        temp=a[j];
-        a[j]=a[j+1];
-        a[j+1]=temp;
-      }
-    }
-  }
-  return &a[n-1];
-}
+// int *Score(int *,int);
+// // Testing Code
+// int main(void){
+// 	int n;
+//   scanf("%d",&n);
+//   int a[n];
+//   for(int i=0; i<n; i++) scanf("%d",&a[i]);
+//   int *maxScore=Score(a,n); 
+//   printf("%d",*maxScore);
+// }
+// int *Score(int *a,int n){
+//   int temp;
+//   for(int i=0; i<n; i++){
+//     for(int j=0; j<n-1; j++){
+//       if(a[j]>a[j+1]){
+//         temp=a[j];
+//         a[j]=a[j+1];
+//         a[j+1]=temp;
+//       }
+//     }
+//   }
+//   return &a[n-1];
+// }
 
 
 // // Number to word

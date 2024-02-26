@@ -229,3 +229,30 @@
 //   }
 //   printf("%d",ct);
 // }
+
+//// PPS2.4
+#include<stdio.h>
+#include<string.h>
+void numOfOccurences(char s1[],char s2[]){
+  int l1=strlen(s1);
+  int l2=strlen(s2);
+  int ct,fct=0;
+  for(int i=0; i<l1; i++){
+    ct=0;
+    for(int j=0; j<l2; j++){
+      if(s1[i]==s2[j]){
+        ct++;
+        i=i+1;
+      }
+    }
+    if(ct==l2){ fct++; i=i-1;}
+  }
+  printf("%d",fct);
+}
+int main(void){
+  char s1[20],s2[20];
+  scanf("%s",s1);
+  scanf("%s",s2);
+  void (*p)(char *, char *)=numOfOccurences;
+  p(s1,s2);
+}
