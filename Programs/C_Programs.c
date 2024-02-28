@@ -428,3 +428,56 @@ Char Arrays(Strings)
 //   x1=f(x1,x2);
 //   printf("%d+%di",x1.real,x1.imag);
 // }
+
+//// Structures
+// #include<stdio.h>
+// #include<stdlib.h>
+// typedef struct{
+//   int d;
+//   int m;
+//   int y;
+// }date;
+// typedef struct{
+//   int eno;
+//   char name[20];
+//   date doj;
+//   float sal;
+// }emp;
+// int main(void){
+//   emp x;
+//   scanf("%d",&x.eno);
+//   scanf("%s",x.name);
+//   scanf("%d %d %d",&x.doj.d,&x.doj.m,&x.doj.y);
+//   scanf("%f",&x.sal);
+
+//   printf("%d ",x.eno);
+//   printf("%s ",x.name);
+//   printf("%d-%d-%d ",x.doj.d,x.doj.m,x.doj.y);
+//   printf("%.2f",x.sal);
+// }
+
+//// Union
+// #include<stdio.h>
+// typedef struct{
+//   int num1; //4B
+//   double num2; //8B
+// }sample1;
+// typedef union{
+//   int num1; //4B
+//   double num2; //8B
+// }sample2;
+// // Only the datatype with the highest size will be allocated
+// int main(void){
+//   sample1 x1;
+//   sample2 x2;
+//   x1.num1=1;
+//   x1.num2=2;
+//   x2.num1=4;
+//   x2.num2=3;
+//   printf("%d %lf %d %lf",x1.num1,x1.num2,x2.num1,x2.num2);
+//   // scanf("%d",&x.num1);
+//   // scanf("%f",&x.num2);
+
+//   // printf("%d ",x.num1);
+//   // printf("%.2f",x.num2);
+// }
