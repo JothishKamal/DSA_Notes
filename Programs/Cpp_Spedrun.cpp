@@ -1,13 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main(void){
-  int n;
-  cin>>n;
-	int sum=0;
-	for(int i=1; i<=n; i++){
-		if(n%i==0){
-			sum=sum+i;
+class test{
+	public:
+		int a;		
+		
+		test(){
+			a=0;
+			cout<<a;
 		}
-	}
-	cout<<sum;
+		
+		test(int x){
+			a=x;
+			cout<<a;
+		}
+
+		test(test &t){
+			a=t.a;
+			cout<<a;
+		}
+};
+int main(void){
+	test t;
+	test t1(t);
+
 }
