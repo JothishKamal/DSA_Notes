@@ -1,35 +1,104 @@
 #include<bits/stdc++.h>
 using namespace std;
-// Types of Constructors
-class date{
-  int d,m,y;
-  public:
-    date(){
-      d=m=y=0;
-      cout<<"Default Contructor"<<endl;
-    }
 
-    date(int a, int b, int c){
-      d=a;m=b;y=c;
-      cout<<"Parameterized Contructor"<<endl;
-    }
+// // Types of Constructors
+// class date{
+//   int d,m,y;
+//   public:
+//     date(){
+//       d=m=y=0;
+//       cout<<"Default Contructor"<<endl;
+//     }
 
-    date(const date& t){
-      d=t.d;
-      m=t.m;
-      y=t.y;
-      cout<<"Copy Constructor"<<endl;
-    }
+//     date(int a, int b, int c){
+//       d=a;m=b;y=c;
+//       cout<<"Parameterized Contructor"<<endl;
+//     }
 
-    void putDate(){
-      cout<<d<<"-"<<m<<"-"<<y<<endl;
-    }
+//     date(const date& t){
+//       d=t.d;
+//       m=t.m;
+//       y=t.y;
+//       cout<<"Copy Constructor"<<endl;
+//     }
+
+//     void putDate(){
+//       cout<<d<<"-"<<m<<"-"<<y<<endl;
+//     }
     
+// };
+// int main(void){
+//   date x;
+//   date y(12,10,2005);
+//   y.putDate();
+//   date z(y);
+//   z.putDate();
+// }
+
+// Q. Object arr with deep copy
+class arr{
+  int *a,size;
+  public:
+    arr(){}
+
+    arr(int *a, int n){
+      this->size = n;
+      this->a = new int(n);
+      for(int i=0; i<n; i++){
+        this->a[i]=a[i];
+      }
+    }
+
+    arr(arr &a){
+      this->size = a.size;
+      this->a = new int(a.size);
+      for(int i=0; i<a.size; i++){
+        this->a[i]=a.a[i];
+      }
+    }
+
+    void updArr(){
+      int size=0;
+      for(int i=0; i<this->size; i++){
+        if(this->a[i]%2!=0){
+          size++;
+        }
+      }
+
+      int *x=new int(size);
+      
+      for(int i=0,tmp=0; i<this->size; i++){
+        if(this->a[i]%2!=0){
+          x[tmp++]=this->a[i];
+        }
+      }
+
+      a=x;
+      this->size=size;
+    }
+
+    void putArr(){
+      for(int i=0; i<this->size; i++){
+        cout<<this->a[i]<<" ";
+      }
+    }
+
+    ~arr(){
+      delete a;
+    }
 };
+
 int main(void){
-  date x;
-  date y(12,10,2005);
-  y.putDate();
-  date z(y);
-  z.putDate();
+  int n;
+  scanf("%d",&n);
+  int x[n];
+  for(int i=0; i<n; i++){
+    scanf("%d",&x[i]);
+  }
+
+  arr y(x,n);
+  y.updArr();
+  y.putArr();
+
+  cout<<endl;
 }
