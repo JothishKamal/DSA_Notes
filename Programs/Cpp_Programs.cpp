@@ -104,7 +104,7 @@ using namespace std;
 //   cout<<endl;
 // }
 
-// // Pre-processor directives
+// // Pre-Processor Directives
 // #define PI 3.14
 // #define add(x,y) (x+y) // Macro
 // int main(void){
@@ -116,3 +116,13 @@ using namespace std;
 //   printf("%.2f %d",area,z);
 // }
 
+// // Static Members
+class testClass{
+  int x;
+  static int y;
+  public:
+};
+int testClass::y=1;
+int main(void){
+  cout<<testClass::y;
+}
