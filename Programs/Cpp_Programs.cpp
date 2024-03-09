@@ -118,9 +118,9 @@ using namespace std;
 
 // // Static Members
 class testClass{
-  int x;
-  static int y;
   public:
+    int x;
+    static int y;
 };
 int testClass::y=1;
 int main(void){
