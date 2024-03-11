@@ -205,36 +205,41 @@ using namespace std;
 // }
 
 // // 6
-// class Player{
-//   protected:
-//     int pNo;
-//     string name;
-//     int numOfMatches;
-//     int *numOfGoals;
-//   public:
-//     Player(int pNo, string name, int numOfMatches, int *numOfGoals){
-//       this->pNo=pNo;
-//       this->name=name;
-//       this->numOfMatches=numOfMatches;
-//       this->numOfGoals=new int(numOfMatches);
-//       for(int i=0; i<numOfMatches; i++){
-//         this->numOfGoals[i]=numOfGoals[i];
-//       }
-//     }
+class Player{
+  protected:
+    int pNo;
+    string name;
+    int numOfMatches;
+    int *numOfGoals;
+  public:
+    Player(int pNo, string name, int numOfMatches, int *numOfGoals){
+      this->pNo=pNo;
+      this->name=name;
+      this->numOfMatches=numOfMatches;
+      this->numOfGoals=new int(numOfMatches);
+      for(int i=0; i<numOfMatches; i++){
+        this->numOfGoals[i]=numOfGoals[i];
+      }
+    }
 
-//     void putPlayerInfo(){
-//       cout<<"Player Info: "<<endl;
-//       cout<<pNo<<endl;
-//       cout<<name<<endl;
-//       cout<<numOfMatches<<endl;
-//       for(int i=0; i<numOfMatches; i++){
-//         cout<<numOfGoals[i]<<" ";
-//       }
-//     }
-// };
+    void putPlayerInfo(){
+      cout<<"Player Info: "<<endl;
+      cout<<pNo<<endl;
+      cout<<name<<endl;
+      cout<<numOfMatches<<endl;
+      for(int i=0; i<numOfMatches; i++){
+        cout<<numOfGoals[i]<<" ";
+      }
+    }
 
-// int main(void){
-//   int goals[]={1,2,3,4};
-//   Player x(1,"Jo",4,goals);
-//   x.putPlayerInfo();
-// }
+    ~Player(){
+      delete numOfGoals;
+    }
+};
+
+int main(void){
+  int goals[]={1,2,3,4};
+  Player x(1,"Jo",4,goals);
+  
+  x.putPlayerInfo();
+}
