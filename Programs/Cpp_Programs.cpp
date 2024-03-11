@@ -117,12 +117,12 @@ using namespace std;
 // }
 
 // // Static Members
-class testClass{
-  public:
-    int x;
-    static int y;
-};
-int testClass::y=1;
-int main(void){
-  cout<<testClass::y;
-}
+// class testClass{
+//   public:
+//     int x;
+//     static int y;
+// };
+// int testClass::y=1;
+// int main(void){
+//   cout<<testClass::y;
+// }
