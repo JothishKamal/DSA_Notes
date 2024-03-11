@@ -205,41 +205,125 @@ using namespace std;
 // }
 
 // // 6
-class Player{
-  protected:
-    int pNo;
-    string name;
-    int numOfMatches;
-    int *numOfGoals;
-  public:
-    Player(int pNo, string name, int numOfMatches, int *numOfGoals){
-      this->pNo=pNo;
-      this->name=name;
-      this->numOfMatches=numOfMatches;
-      this->numOfGoals=new int(numOfMatches);
-      for(int i=0; i<numOfMatches; i++){
-        this->numOfGoals[i]=numOfGoals[i];
-      }
-    }
+// class Player{
+//   protected:
+//     int pNo;
+//     string name;
+//     int numOfMatches;
+//     int *numOfGoals;
+//   public:
+//     Player(int pNo, string name, int numOfMatches, int *numOfGoals){
+//       this->pNo=pNo;
+//       this->name=name;
+//       this->numOfMatches=numOfMatches;
+//       this->numOfGoals=new int(numOfMatches);
+//       for(int i=0; i<numOfMatches; i++){
+//         this->numOfGoals[i]=numOfGoals[i];
+//       }
+//     }
 
-    void putPlayerInfo(){
-      cout<<"Player Info: "<<endl;
-      cout<<pNo<<endl;
-      cout<<name<<endl;
-      cout<<numOfMatches<<endl;
-      for(int i=0; i<numOfMatches; i++){
-        cout<<numOfGoals[i]<<" ";
-      }
-    }
+//     void putPlayerInfo(){
+//       cout<<"Player Info: "<<endl;
+//       cout<<pNo<<endl;
+//       cout<<name<<endl;
+//       cout<<numOfMatches<<endl;
+//       for(int i=0; i<numOfMatches; i++){
+//         cout<<numOfGoals[i]<<" ";
+//       }
+//     }
 
-    ~Player(){
-      delete numOfGoals;
-    }
-};
+//     ~Player(){
+//       delete numOfGoals;
+//     }
+// };
 
-int main(void){
-  int goals[]={1,2,3,4};
-  Player x(1,"Jo",4,goals);
+// int main(void){
+//   int goals[]={1,2,3,4};
+//   Player x(1,"Jo",4,goals);
   
-  x.putPlayerInfo();
-}
+//   x.putPlayerInfo();
+// }
+
+// // 7
+// class Worker{
+//   protected:
+//     int code;
+//     char name[20];
+//     float salary;
+//   public:
+//     Worker(){
+//       cin>>code;
+//       cin>>name;
+//       cin>>salary;
+//     }
+// };
+
+// class Officer{
+//   protected:
+//     float da, hra;
+//   public:
+//     Officer(){
+//       cin>>da;
+//       cin>>hra;
+//     }
+// };
+
+// class Manager: public Worker, public Officer{
+//   float ta, grossSalary;
+//   public:
+//     Manager(){
+//       ta=0.1*salary;
+//     }
+
+//     void calcGrossSalary(){
+//       grossSalary=da+hra+ta;
+//     }
+
+//     void putDetails(){
+//       cout<<code<<endl;
+//       cout<<name<<endl;
+//       cout<<grossSalary<<endl;
+//     }
+// };
+
+// int main(void){
+//   Manager x;
+//   x.calcGrossSalary();
+//   x.putDetails();
+// }
+
+// // 10
+
+
+// // 11
+// class Vaccine{
+//   public:
+//     virtual void putVaccine(){
+//       cout<<"COVID Vaccine"<<endl;
+//     }
+// };
+
+// class Covaxin: public Vaccine{
+//   public:
+//     void putVaccine() override{
+//       cout<<"COVAXIN Vaccine"<<endl;
+
+//     }
+// };
+
+// class Covishield: public Vaccine{
+//   public:
+//     void putVaccine() override{
+//       cout<<"COVISHIELD Vaccine"<<endl;
+//     }
+// };
+
+// int main(void){
+//   Covaxin cx;
+//   Covishield cs;
+//   Vaccine *pCx, *pCs;
+//   pCx=&cx;
+//   pCs=&cs;
+//   pCx->putVaccine();
+//   pCs->putVaccine();
+// }
