@@ -126,3 +126,62 @@ using namespace std;
 // int main(void){
 //   cout<<testClass::y;
 // }
+
+// // Friend Functions
+
+// // Friend Class
+// class Square;
+
+// class Rectangle{
+//   int width,height;
+//   public:
+//     Rectangle(int x, int y){
+//       width=x;
+//       height=y;
+//     }
+
+//     void display(){
+//       cout<<"Area of Rectangle: "<<width*height<<endl;
+//     }
+
+//     void morph(Square &);
+// };
+
+// class Square{
+//   int side;
+//   public:
+//     Square(int x){
+//       side=x;
+//     }
+//     void display(){
+//       cout<<"Area of Square: "<<side*side<<endl;
+//     }
+//     friend class Rectangle;
+// };
+
+// void Rectangle::morph(Square &s){
+//   width=s.side;
+//   height=s.side;
+// }
+
+// int main(void){
+//   Rectangle rec(5,10);
+//   Square sq(5);
+
+//   cout<<"Before: "<<endl;
+//   rec.display();
+//   sq.display();
+
+//   rec.morph(sq);
+//   cout<<"After: "<<endl;
+//   rec.display();
+//   sq.display();
+  
+// }
+
+// iostream
+/*
+cin - Object, >> - Function, n - Argument
+>> - Insertion Operator
+<< - Extraction Operator
+*/
