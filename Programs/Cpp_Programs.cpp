@@ -179,9 +179,143 @@ using namespace std;
   
 // }
 
-// iostream
+// // iostream
 /*
 cin - Object, >> - Function, n - Argument
 >> - Insertion Operator
 << - Extraction Operator
 */
+
+
+// // Multipath Inheritance
+// class job{
+//   protected:
+//     int id;
+//     char name[20];
+//     float time;
+//     float space;
+//   public:
+//     void get();
+//     void print();
+//     int getId();
+//     float getTime();
+//     float getSpace();
+// };
+
+// class jobScheduling{
+//   protected:
+//     int numOfJobs;
+//     job *jobs;
+//   public:
+//     void get();
+//     void print();
+//     // Schedule based on id
+//     void schedule();
+// };
+
+// class timeJobScheduling: public jobScheduling{
+//   public:
+//     // Schedule based on time
+//     void schedule();
+// };
+
+// class spaceJobScheduling: public jobScheduling{
+//   public:
+//     // Schedule based on space
+//     void schedule();
+// };
+
+// void job::get(){
+//   cin>>id>>name>>time>>space;
+// }
+
+// void job::print(){
+//   cout<<id<<endl<<name<<endl<<time<<endl<<space<<endl;
+// }
+
+// int job::getId(){
+//   return id;
+// }
+
+// float job::getTime(){
+//   return time;
+// }
+
+// float job::getSpace(){
+//   return space;
+// }
+
+// void jobScheduling::get(){
+//   cin>>numOfJobs;
+//   jobs=new job[numOfJobs];
+//   for(int i=0; i<numOfJobs; i++){
+//     jobs[i].get();
+//   }
+// }
+
+// void jobScheduling::print(){
+//   for(int i=0; i<numOfJobs; i++){
+//     jobs[i].print();
+//   }
+// }
+
+// void jobScheduling::schedule(){
+//   cout<<"Base class scheduling is called"<<endl;
+//   job t;
+//   for(int i=0; i<numOfJobs; i++){
+//     for(int j=i+1; j<numOfJobs; j++){
+//       if(jobs[i].getId()>jobs[j].getId()){
+//         t=jobs[i];
+//         jobs[i]=jobs[j];
+//         jobs[j]=t;
+//       }
+//     }
+//   }
+// }
+
+// void timeJobScheduling::schedule(){
+//   cout<<"Time based scheduling is called"<<endl;
+//   job t;
+//   for(int i=0; i<numOfJobs; i++){
+//     for(int j=i+1; j<numOfJobs; j++){
+//       if(jobs[i].getTime()>jobs[j].getTime()){
+//         t=jobs[i];
+//         jobs[i]=jobs[j];
+//         jobs[j]=t;
+//       }
+//     }
+//   }
+// }
+
+// void spaceJobScheduling::schedule(){
+//   cout<<"Space based scheduling is called"<<endl;
+//   job t;
+//   for(int i=0; i<numOfJobs; i++){
+//     for(int j=i+1; j<numOfJobs; j++){
+//       if(jobs[i].getSpace()>jobs[j].getSpace()){
+//         t=jobs[i];
+//         jobs[i]=jobs[j];
+//         jobs[j]=t;
+//       }
+//     }
+//   }
+// }
+
+// int main(){
+//   jobScheduling *js;
+//   timeJobScheduling tjs;
+//   spaceJobScheduling sjs;
+//   js=new jobScheduling();
+//   int ch;
+//   cin>>ch;
+//   if(ch==1){
+//     tjs.get();
+//     js=&tjs;
+//   } else if(ch==2){
+//     sjs.get();
+//     js=&sjs;
+//   }
+
+//   js->schedule();
+//   js->print();
+// }

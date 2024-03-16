@@ -1,4 +1,4 @@
-// // Digit manipulation 
+// // Digit manipulation
 // void main(){
 //   int n,len,temp,sum=0,d;
 //   scanf("%d",&n);
@@ -34,7 +34,7 @@
 // }
 
 // Patterns
-/* 
+/*
 (i)
 *
 * *
@@ -107,10 +107,10 @@
 
 /*
 (iv)
-  b 
- bbb 
+  b
+ bbb
 bbbbb
- bbb 
+ bbb
   b
 */
 // #include <stdio.h>
@@ -142,17 +142,17 @@ bbbbb
 /*
 (v)
 
- d d    
-d d d   
- d d    
+ d d
+d d d
+ d d
 
-   d d         
-  d d d        
- d d d d       
-d d d d d      
- d d d d       
-  d d d        
-   d d         
+   d d
+  d d d
+ d d d d
+d d d d d
+ d d d d
+  d d d
+   d d
 */
 // #include <stdio.h>
 // int main(void){
@@ -224,30 +224,28 @@ d d d d d
 
 //       case 2:
 //       break;
-      
+
 //       case 3:
 //       for(int i=0; i<n; i++){
 //         printf("%d ",a[i]);
 
 //       }
 //       break;
-      
+
 //       case 4:
 //       break;
-      
+
 //       case 5:
 //       break;
-      
+
 //       default:
 //         printf("Invalid choice");
 //     }
-  
+
 //   if (ch==5) break;
 
 //   } while(1);
 // }
-
-
 
 /*
 Char Arrays(Strings)
@@ -260,13 +258,12 @@ Char Arrays(Strings)
 //   fgets(name,20,stdin);
 //   name[strlen(name)-1]='\0';
 //   scanf("%c %c",&c1,&c2);
-//   for(int i=0; name[i]!='\0'; i++) 
+//   for(int i=0; name[i]!='\0'; i++)
 //     if(name[i]==c1){
 //       name[i]=c2;
 //     }
 //   printf("%s",name);
 // }
-
 
 /* Sum,Avg,Max,Min of a matrix */
 // #include<stdio.h>
@@ -319,7 +316,7 @@ Char Arrays(Strings)
 //       scanf("%d",&a[i][j]);
 //     }
 //   }
-  
+
 //   // // Minor/Left Diagonal
 //   // for(int i=0;i<m;i++){
 //   //   for(int j=n-1; j>=0;j--){
@@ -331,7 +328,7 @@ Char Arrays(Strings)
 //   for(int i=0; i<m; i++){
 //     for(int j=0; j<n; j++){
 //       if(i==0 || i==m-1) printf("%d",a[i][j]);
-//     } 
+//     }
 //     printf("%d %d ",a[i][0],a[i][n-1]);
 //     printf("\n");
 //   }
@@ -343,7 +340,7 @@ Char Arrays(Strings)
 //   int m,n,ct,zct=0;
 //   scanf("%d %d", &m,&n);
 //   int a[m][n];
-  
+
 //   for(int i=0; i<m; i++){
 //     for(int j=0; j<n; j++){
 //       scanf("%d",&a[i][j]);
@@ -481,3 +478,4 @@ Char Arrays(Strings)
 //   // printf("%d ",x.num1);
 //   // printf("%.2f",x.num2);
 // }
+

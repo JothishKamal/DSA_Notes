@@ -327,3 +327,11 @@ using namespace std;
 //   pCx->putVaccine();
 //   pCs->putVaccine();
 // }
+
+int main(void){
+  string s;
+  cin>>s;
+  
+  map<char,int> sMap;
+  
+}
