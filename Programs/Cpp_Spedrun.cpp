@@ -328,10 +328,3 @@ using namespace std;
 //   pCs->putVaccine();
 // }
 
-int main(void){
-  string s;
-  cin>>s;
-  
-  map<char,int> sMap;
-  
-}
