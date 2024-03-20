@@ -231,14 +231,13 @@ cin - Object, >> - Function, n - Argument
 
 // // Test
 class b{
-  int a,b,c,d;
   public:
+    int a,b,c,d;
     void get();
     void put();
 };
 
-class d: protected b{
-
+class d: public b{
 };
 
 int main(void){
