@@ -186,3 +186,63 @@ cin - Object, >> - Function, n - Argument
 << - Extraction Operator
 */
 
+// // Inheritance
+// class parent{
+//   private:
+//     int pri;
+//   protected:
+//     int pro;
+//   public:
+//     int pub;
+//     void input(){
+//       cin>>pri>>pro>>pub;
+//     }
+//     void output(){
+//       cout<<pri<<" "<<pro<<" "<<pub<<endl;
+//     }
+// };
+
+// class child: public parent{
+//   public:
+//     void read(){
+//       cin>>pro>>pub;
+//     }
+
+//     void write(){
+//       cout<<pro<<" "<<pub<<endl;
+//     }
+// };
+
+// class grandChild: public child{
+//   public:
+//     void get(){
+//       cin>>pub;
+//     }
+//     void put(){
+//       cout<<pub;
+//     }
+// };
+
+// int main(void){
+//   grandChild x;
+//   x.get();
+//   x.put();
+// }
+
+// // Test
+class b{
+  int a,b,c,d;
+  public:
+    void get();
+    void put();
+};
+
+class d: protected b{
+
+};
+
+int main(void){
+  b ob;
+  d obj;
+  cout<<sizeof(ob)<<" "<<sizeof(obj);
+}
