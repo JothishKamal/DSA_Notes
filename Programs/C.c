@@ -52,22 +52,23 @@
 //   printf("\n%d", ctSum);
 // }
 
-#include<stdio.h>
-int main(void){
-  int m,n;
-  scanf("%d %d",&m,&n);
-  int a[m],b[n],c[m+n];
-  for(int i=0; i<m; i++) scanf("%d",&a[i]);
-  for(int i=0; i<n; i++) scanf("%d",&b[i]);
+// #include<stdio.h>
+// int main(void){
+//   int m,n;
+//   scanf("%d %d",&m,&n);
+//   int a[m],b[n],c[m+n];
+//   for(int i=0; i<m; i++) scanf("%d",&a[i]);
+//   for(int i=0; i<n; i++) scanf("%d",&b[i]);
   
-  for(int i=0,x=0,y=0; i<m+n; i++){
-    if(a[x]<b[y] && x<=m-1){
-      c[i]=a[x];
-      x++;
-    } else {
-      c[i]=b[y];
-      y++;
-    }
-    printf("%d ",c[i]);
-  }
-}
+//   for(int i=0,x=0,y=0; i<m+n; i++){
+//     if(a[x]<b[y] && x<=m-1){
+//       c[i]=a[x];
+//       x++;
+//     } else {
+//       c[i]=b[y];
+//       y++;
+//     }
+//     printf("%d ",c[i]);
+//   }
+// }
+

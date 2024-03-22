@@ -328,3 +328,75 @@ using namespace std;
 //   pCs->putVaccine();
 // }
 
+// // Student-Course
+// class course;
+// class student{
+//   int sId,numOfCoursesRegistered;
+//   int *cc;
+//   static int numOfStudents;
+//   public:
+//     student(){
+//       cout<<"Enter Student "<<(numOfStudents)<<"'s details: "<<endl;
+//       cout<<"Student ID: "; cin>>sId;
+//       cout<<"Number of Courses Registered by the Student: "; cin>>numOfCoursesRegistered;
+//       cc=new int[numOfCoursesRegistered];
+//       cout<<"Enter the Course Code(s) Registered by the Student: ";
+//       for(int i=0; i<numOfCoursesRegistered; i++){
+//         cin>>cc[i];
+//       }
+//       numOfStudents++;
+//     }
+
+//     friend void studentDetails(student*,course*);
+// };
+
+
+// class course{
+//   int cc;
+//   static int numOfCourses;
+//   char title[20];
+//   public:
+//     course(){
+//       cout<<"Course ID: "; cin>>cc;
+//       cout<<"Course Title: "; cin>>title;
+//       numOfCourses++;
+//     }
+
+//     friend void studentDetails(student*,course*);
+    
+// };
+
+// void studentDetails(student *x, course *y){
+//   for(int i=0; i<x[0].numOfStudents-1; i++){
+//     cout<<"Student ID: "<<x[i].sId<<endl;
+//     cout<<"No. of Courses Registered: "<<x[i].numOfCoursesRegistered<<endl;
+//     cout<<"Course Details: "<<endl;
+//     for(int j=0; j<x[i].numOfCoursesRegistered; j++){
+//       for(int k=0; k<y[0].numOfCourses-1; k++){
+//         if(x[i].cc[j]==y[k].cc){
+//           cout<<"Course ID: "<<y[k].cc<<endl<<"Course Title: "<<y[k].title<<endl;
+//         }
+//       }
+//     }
+//     if(x[i].numOfCoursesRegistered==0) cout<<"N/A"<<endl;
+//   }
+// }
+
+// int student::numOfStudents=1;
+// int course::numOfCourses=1;
+
+// int main(void){
+//   int numOfStudents;
+//   cout<<"Enter the number of students: ";  cin>>numOfStudents;
+//   student *students=new student[numOfStudents];
+
+//   int numOfCourses;
+//   cout<<"Enter the number of courses offered: "; cin>>numOfCourses;
+//   course *courses=new course[numOfCourses];
+
+//   studentDetails(students,courses);
+
+//   delete students;
+//   delete courses;
+  
+// }

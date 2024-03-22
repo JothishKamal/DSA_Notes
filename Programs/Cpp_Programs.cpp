@@ -228,20 +228,3 @@ cin - Object, >> - Function, n - Argument
 //   x.get();
 //   x.put();
 // }
-
-// // Test
-class b{
-  public:
-    int a,b,c,d;
-    void get();
-    void put();
-};
-
-class d: public b{
-};
-
-int main(void){
-  b ob;
-  d obj;
-  cout<<sizeof(ob)<<" "<<sizeof(obj);
-}
