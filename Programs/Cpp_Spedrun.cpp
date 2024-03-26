@@ -239,7 +239,7 @@ using namespace std;
 
 // int main(void){
 //   int goals[]={1,2,3,4};
-//   Player x(1,"Jo",4,goals);
+//   Player x(1,"ko",4,goals);
   
 //   x.putPlayerInfo();
 // }
@@ -371,9 +371,9 @@ using namespace std;
 //     cout<<"Student ID: "<<x[i].sId<<endl;
 //     cout<<"No. of Courses Registered: "<<x[i].numOfCoursesRegistered<<endl;
 //     cout<<"Course Details: "<<endl;
-//     for(int j=0; j<x[i].numOfCoursesRegistered; j++){
+//     for(int k=0; k<x[i].numOfCoursesRegistered; k++){
 //       for(int k=0; k<y[0].numOfCourses-1; k++){
-//         if(x[i].cc[j]==y[k].cc){
+//         if(x[i].cc[k]==y[k].cc){
 //           cout<<"Course ID: "<<y[k].cc<<endl<<"Course Title: "<<y[k].title<<endl;
 //         }
 //       }
@@ -400,3 +400,4 @@ using namespace std;
 //   delete courses;
   
 // }
+

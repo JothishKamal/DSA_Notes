@@ -187,44 +187,37 @@ cin - Object, >> - Function, n - Argument
 */
 
 // // Inheritance
-// class parent{
-//   private:
-//     int pri;
-//   protected:
-//     int pro;
-//   public:
-//     int pub;
-//     void input(){
-//       cin>>pri>>pro>>pub;
-//     }
-//     void output(){
-//       cout<<pri<<" "<<pro<<" "<<pub<<endl;
-//     }
-// };
+class Shape{
+  protected:
+    float area;
+  public:
+    Shape(){
+      area=0;
+    }
+};
 
-// class child: public parent{
-//   public:
-//     void read(){
-//       cin>>pro>>pub;
-//     }
+class Triangle: public Shape{
+  protected:
+    float base,height;
+  public:
+    Triangle(){
+      cin>>base>>height;
+    }
 
-//     void write(){
-//       cout<<pro<<" "<<pub<<endl;
-//     }
-// };
+    void calcArea(){
+      area=((float)1/2)*base*height;
+    }
+};
 
-// class grandChild: public child{
-//   public:
-//     void get(){
-//       cin>>pub;
-//     }
-//     void put(){
-//       cout<<pub;
-//     }
-// };
+class Quadrilateral: public Shape{
+  protected:
+    float length,breadth;
+  public:
+    Quadrilateral(){
+      cin>>length>>breadth;
+    }
 
-// int main(void){
-//   grandChild x;
-//   x.get();
-//   x.put();
-// }
+    void calcArea(){
+      area=length*breadth;
+    }
+};

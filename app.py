@@ -10,11 +10,11 @@ advtg = "Flutter is a framework made by Google for building mobile apps. One big
 print("Which stacks can not be used to make crossplatform apps?")
 # Answering this question is mandatory. Multiple options may be selected.
 crossplatform = {
-   "flutter": false,
-   "react": false,
-   "native": true,
-   "kotlin": true,
-   "native script": false,
+   "flutter": False,
+   "react": False,
+   "native": True,
+   "kotlin": True,
+   "native script": False,
 }
 print("Do you know what a splash screen is? If yes, explain in detail the usage and how you'd go creating one in your preferred stack?")
 # Answering this question is mandatory.
@@ -100,24 +100,23 @@ print("Describe your learning journey with app development. And if you're yet to
 lifeapp_reeval = """ I'm a beginner in Flutter. I learn by watching YouTube channels such as Fireship, Flutter Guys, etc. I also do Google Codelabs and build apps. """
 print("What is the significance of HTTP methods (GET, POST, PUT, DELETE) in the context of APIs?")
 # Answering this question is mandatory.
-api_und = "GET: Retrieve data from a server.
+api_und = '''GET: Retrieve data from a server.
 POST: Send data to a server to create or update a resource.
 PUT: Update a resource on the server.
-DELETE: Remove a resource from the server."
+DELETE: Remove a resource from the server.'''
 print("Explain the difference between authentication and authorization in the context of API security.")
 # Answering this question is mandatory.
-api_security = "Authentication is the process of verifying the identity of a user or system trying to access an API. Authorization, on the other hand, determines what actions the authenticated entity is allowed to perform.
-"
+api_security = "Authentication is the process of verifying the identity of a user or system trying to access an API. Authorization, on the other hand, determines what actions the authenticated entity is allowed to perform."
 print("In terms of scalability, what challenges might SQL databases face as compared to the scalability advantages provided by NoSQL databases? What factors would you consider before chooing a database for your project?")
 # Answering this question is mandatory.
-databases_compi = "SQL databases can struggle with scalability because they need a fixed schema and scale vertically, meaning they need more powerful hardware. NoSQL databases are more flexible and scale horizontally, meaning they can add more servers easily.
+databases_compi = '''SQL databases can struggle with scalability because they need a fixed schema and scale vertically, meaning they need more powerful hardware. NoSQL databases are more flexible and scale horizontally, meaning they can add more servers easily.
 
-To choose a database for your project, consider factors like your data structure, scalability needs, consistency and availability requirements, performance, costs, and community support."
+To choose a database for your project, consider factors like your data structure, scalability needs, consistency and availability requirements, performance, costs, and community support.'''
 print("Which of the following tools can you use for testing your app?")
 # Answering this question is mandatory. Multiple options may be selected.
 app_testing = {
-   "Docker": false,
-   "Android Emulator": true,
-   "Insomnia": false,
-   "Postman": false,
+   "Docker": False,
+   "Android Emulator": True,
+   "Insomnia": False,
+   "Postman": False,
 }
