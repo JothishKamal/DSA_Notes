@@ -401,3 +401,280 @@ using namespace std;
   
 // }
 
+
+// PPS2.11
+// #include<iostream>
+// #include<stdlib.h>
+
+// using namespace std;
+// class Department;
+
+// class Employee{
+//     int eno;
+//     char name[20],departmentCode[5];
+//     public:
+//         void getEmployee(){
+//             cout<<"Enter Employee Number: ";
+//             cin>>eno;
+//             cout<<"Enter Employee Name: ";
+//             cin>>name;
+//             cout<<"Enter Employee's Department Code: ";
+//             cin>>departmentCode;
+//         }
+        
+//         friend void employeeDetails(Employee*, int, Department*, int);
+// };
+
+// class Department{
+//     char departmentCode[5],departmentName[20];
+//     public:
+//         void getDepartmentDetails(){
+//             cout<<"Enter Department Code: ";
+//             cin>>departmentCode;
+//             cout<<"Enter Department Name: ";
+//             cin>>departmentName;
+//         }
+
+//         friend void employeeDetails(Employee*, int, Department*, int);
+// };
+
+// void employeeDetails(Employee* e, int n1, Department* d, int n2){
+//     for(int i=0; i<n1; i++){
+//         for(int j=0; j<n2; j++){
+//             int flag=0;
+//             for(int k=0; e[i].departmentCode[k] != '\0'; k++){
+//                 if(e[i].departmentCode[k] != d[j].departmentCode[k]){
+//                     flag=1;
+//                     break;
+//                 }
+//             }
+
+//             if(!flag){
+//                 cout<<"Employee Number: "<<e[i].eno<<endl;
+//                 cout<<"Employee Name: "<<e[i].name<<endl;
+//                 cout<<"Department Code: "<<e[i].departmentCode<<endl;
+//                 cout<<"Department Name: "<<d[j].departmentName<<endl;
+//             }
+//         }
+//     }
+
+// }
+
+// int main(void){
+//     int n1;
+    
+//     cout<<"Enter the number of Employees: ";
+//     cin>>n1;
+    
+//     Employee *emp=(Employee*)malloc(sizeof(Employee)*n1);
+//     for(int i=0; i<n1; i++){
+//         emp[i].getEmployee();
+//     }
+
+//     int n2;
+//     cout<<"Enter the number of Departments: ";
+//     cin>>n2;
+
+//     Department *dept=(Department*)malloc(sizeof(Department)*n2);
+//     for(int i=0; i<n2; i++){
+//         dept[i].getDepartmentDetails();
+//     }
+
+//     employeeDetails(emp,n1,dept,n2);
+
+//     free(emp);
+//     free(dept);
+// }
+
+// PPS2.12
+// #include<stdio.h>
+// class Circle{
+//     float diameter,area,circumference;
+//     protected:
+//         float radius;
+//     public:
+//         void getRadius(){
+//             scanf("%f",&radius);
+//         }
+
+//         void calc(){
+//             diameter=2*radius;
+//             area=3.14*radius*radius;
+//             circumference=2*3.14*radius;
+//         }
+
+//         void print(){
+//             printf("%.2f\n%.2f\n%.2f\n",diameter,area,circumference);
+//         }
+// };
+// class Sphere: public Circle{
+//     float surfaceArea,volume;
+//     public:
+//         void calc(){
+//             Circle::calc();
+//             surfaceArea=4*3.14*radius*radius;
+//             volume=((float)4/3)*3.14*radius*radius*radius;
+//         }
+
+//         void print(){
+//             Circle::print();
+//             printf("%.2f\n%.2f",surfaceArea,volume);
+//         }
+// };
+// int main(void){
+//     Sphere sphere;
+//     sphere.getRadius();
+//     sphere.calc();
+//     sphere.print();
+// }
+
+// PPS2.13
+// #include<iostream>
+// using namespace std;
+// class Square{
+//   protected:
+//     float side,area,perimeter;
+//   public:
+//     void getSide(){
+//       cout<<"Enter the Side: ";
+//       cin>>side;
+//     }
+
+//     void calcArea(){
+//       area=side*side;
+//       cout<<"Area: "<<area<<endl;
+//     }
+
+//     void calcPerimeter(){
+//       perimeter=4*side;
+//       cout<<"Perimeter: "<<perimeter<<endl;
+//     }
+// };
+
+// class Cube: public Square{
+//   protected:
+//     float surfaceArea,volume;
+//   public:
+//     void calcSurfaceArea(){
+//       surfaceArea=6*side*side;
+//       cout<<"Surface Area: "<<surfaceArea<<endl;
+//     }
+
+//     void calcVolume(){
+//       volume=side*side*side;
+//       cout<<"Volume: "<<volume<<endl;
+//     }
+// };
+
+// class Cuboid: protected Cube{
+//   float length,breadth,height;
+//   public:
+//     void getDimensions(){
+//       cout<<"Enter Length, Breadth and Height of the Cuboid: ";
+//       cin>>length>>breadth>>height;
+//     }
+
+//     void calcSurfaceArea(){
+//       surfaceArea=2*(length*breadth+breadth*height+height*length);
+//       cout<<"Surface Area: "<<surfaceArea<<endl;
+//     }
+
+//     void calcVolume(){
+//       volume=length*breadth*height;
+//       cout<<"Volume: "<<volume<<endl;
+//     }
+// };
+
+// int main(void){
+//   Square square;
+//   square.getSide();
+//   square.calcArea();
+//   square.calcPerimeter();
+  
+//   Cube cube;
+//   cube.getSide();
+//   cube.calcSurfaceArea();
+//   cube.calcVolume();
+
+//   Cuboid cuboid;
+//   cuboid.getDimensions();
+//   cuboid.calcSurfaceArea();
+//   cuboid.calcVolume();
+// }
+
+// PPS2.14
+// #include<iostream>
+// using namespace std;
+// class Circle{
+//   protected:
+//     float radius;
+//   public:
+//     Circle(){
+//       cout<<"Enter the Radius: ";
+//       cin>>radius;
+//     }
+// };
+
+// class Cone: public Circle{
+//   float slantHeight, height,surfaceArea,volume;
+//   public:
+//     Cone(){
+//       cout<<"Enter the Slant Height(l) and Height(h) of the Cone: ";
+//       cin>>slantHeight>>height;
+//     }
+
+//     void calcSurfaceArea(){
+//       surfaceArea=3.14*radius*slantHeight;
+//       cout<<"Surface Area of the Cone: "<<surfaceArea<<endl;
+//     }
+
+//     void calcVolume(){
+//       volume=((float)1/3)*3.14*radius*radius*height;
+//       cout<<"Volume of the Cone: "<<volume<<endl;
+//     }
+// };
+
+// class Hemisphere: public Circle{
+//   float surfaceArea,volume;
+//   public:
+//     void calcSurfaceArea(){
+//       surfaceArea=3*3.14*radius*radius;
+//       cout<<"Surface Area of the Hemisphere: "<<surfaceArea<<endl;
+//     }
+
+//     void calcVolume(){
+//       volume=((float)2/3)*3.14*radius*radius*radius;
+//       cout<<"Volume of the Hemisphere: "<<volume<<endl;
+//     }
+// };
+
+// class Cylinder: public Circle{
+//   float height,surfaceArea,volume;
+//   public:
+//     Cylinder(){
+//       cout<<"Enter the Height of the Cylinder: ";
+//       cin>>height;
+//     }
+
+//     void calcSurfaceArea(){
+//       surfaceArea=2*3.14*radius*(radius+height);
+//       cout<<"Surface Area of the Cylinder: "<<surfaceArea<<endl;
+//     }
+
+//     void calcVolume(){
+//       volume=3.14*radius*radius*height;
+//       cout<<"Volume of the Cylinder: "<<volume<<endl;
+//     }
+// };
+
+// int main(void){
+//   Cone cone;
+//   cone.calcSurfaceArea();
+//   cone.calcVolume();
+//   Hemisphere hemisphere;
+//   hemisphere.calcSurfaceArea();
+//   hemisphere.calcVolume();
+//   Cylinder cylinder;
+//   cylinder.calcSurfaceArea();
+//   cylinder.calcVolume();
+// }

@@ -187,37 +187,89 @@ cin - Object, >> - Function, n - Argument
 */
 
 // // Inheritance
-class Shape{
-  protected:
-    float area;
-  public:
-    Shape(){
-      area=0;
-    }
-};
+// class Shape{
+//   protected:
+//     float area;
+//   public:
+//     Shape(){
+//       area=0;
+//     }
+// };
 
-class Triangle: public Shape{
-  protected:
-    float base,height;
-  public:
-    Triangle(){
-      cin>>base>>height;
-    }
+// class Triangle: public Shape{
+//   protected:
+//     float base,height;
+//   public:
+//     Triangle(){
+//       cin>>base>>height;
+//     }
 
-    void calcArea(){
-      area=((float)1/2)*base*height;
-    }
-};
+//     void calcArea(){
+//       area=((float)1/2)*base*height;
+//     }
+// };
 
-class Quadrilateral: public Shape{
-  protected:
-    float length,breadth;
-  public:
-    Quadrilateral(){
-      cin>>length>>breadth;
-    }
+// class Quadrilateral: public Shape{
+//   protected:
+//     float length,breadth;
+//   public:
+//     Quadrilateral(){
+//       cin>>length>>breadth;
+//     }
 
-    void calcArea(){
-      area=length*breadth;
-    }
-};
+//     void calcArea(){
+//       area=length*breadth;
+//     }
+// };
+
+
+// // Virtual Base Class
+// class A{
+//   protected:
+//     int a;
+//   public:
+//     A(){a=0;}
+// };
+
+// class B: virtual public A{
+//   protected:
+//     int b;
+//   public:
+//     B(){b=0;}
+// };
+
+// class C: virtual public A{
+//   protected:
+//     int c;
+//   public:
+//     C(){c=0;}
+// };
+
+// class X: virtual public A{
+//   protected:
+//     int x;
+//   public:
+//     X(){x=0;}
+// };
+
+// class D: public B, public C, public X{
+//   protected:
+//     int d;
+//   public:
+//     D(){d=0;}
+    
+//     void read(){
+//       cin>>a>>b>>c>>d;
+//     }
+
+//     void display(){
+//       cout<<a<<b<<c<<d<<x;
+//     }
+// };
+
+// int main(void){
+//   D obj;
+//   obj.read();
+//   obj.display();
+// }
+

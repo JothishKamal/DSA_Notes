@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "iostream": "cpp"
   },
   "python.REPL.enableREPLSmartSend": false
 }
