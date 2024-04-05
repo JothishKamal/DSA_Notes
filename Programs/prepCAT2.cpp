@@ -152,3 +152,61 @@
 //   x.print();
 // }
 
+// // C2
+// #include<iostream>
+// using namespace std;
+// class Student{
+//   protected:
+//     int rno,age;
+//     char name[20];
+//   public:
+//     void get(){
+//       cin>>rno>>name>>age;
+//     }
+// };
+// class Exam: public Student{
+//   protected:
+//     int marks[6];
+//   public:
+//     void get(){
+//       Student::get();
+//       for(int i=0; i<6; i++){
+//         cin>>marks[i];
+//       }
+//     }
+// };
+
+// class Sports{
+//   protected:
+//     char sportsName[20];
+//     int score;
+//   public:
+//     void get(){
+//       cin>>sportsName>>score;
+//     }
+// };
+
+// class Result: public Exam, public Sports{
+//   float avg;
+//   public:
+//     void get(){
+//       Exam::get();
+//       Sports::get();
+//     }
+//     void checkEligibility(){
+//       avg=0;
+//       for(int i=0; i<6; i++) avg+=marks[i];
+//       avg/=6;
+
+//       if(avg>75 && score>75){
+//         cout<<"Eligible";
+//       } else {
+//         cout<<"Not Eligible";
+//       }
+//     }
+// };
+// int main(void){
+//   Result person;
+//   person.get();
+//   person.checkEligibility();
+// }
