@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<stdio.h>
 using namespace std;
 
 // // Types of Constructors
@@ -273,3 +272,15 @@ cin - Object, >> - Function, n - Argument
 //   obj.display();
 // }
 
+/*
+Polymorphism
+Supported in C as well
+
+Types:-
+  Compile Time(Operator Overloading, Function OVerloading)
+  Runtime(Virtual Functions)
+*/
+
+int main(void){
+
+}

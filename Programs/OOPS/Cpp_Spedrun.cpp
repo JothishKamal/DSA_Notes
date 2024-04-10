@@ -678,3 +678,22 @@ using namespace std;
 //   cylinder.calcSurfaceArea();
 //   cylinder.calcVolume();
 // }
+
+// WAP to add
+void add(int x, int y){
+  cout<<x+y<<endl;
+}
+
+void add(float x, float y){
+  cout<<x+y<<endl;
+}
+
+void add(const char x[], const char y[]){
+  cout<<x<<y<<endl;
+}
+
+int main(void){
+  add(1,2);
+  add((float)4.2,(float)6.9);
+  add("Jo","Op");
+}
