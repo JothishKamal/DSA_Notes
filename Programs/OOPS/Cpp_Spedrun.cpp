@@ -694,6 +694,6 @@ void add(const char x[], const char y[]){
 
 int main(void){
   add(1,2);
-  add((float)4.2,(float)6.9);
+  add((float)4.20,(float)6.9);
   add("Jo","Op");
 }
