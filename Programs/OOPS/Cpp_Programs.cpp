@@ -279,8 +279,58 @@ Supported in C as well
 Types:-
   Compile Time(Operator Overloading, Function OVerloading)
   Runtime(Virtual Functions)
+
+return type doesn't matter in function overloading because constructors
+can be overloaded without having a return type
 */
 
-int main(void){
+// // Function Overloading in Inheritance
+// class parent{
+//   protected:
+//     int a;
+//   public:
+//     parent(int a){ this->a = a;}
+    
+//     void display(int a){
+//       cout<<"The sum is: "<<(this->a+a);
+//     }
+// };
+// class child: public parent{
+//   int b;
+//   public:
+//     child(int a, int b):parent(a){
+//       this->b=b;
+//     }
+    
+//     void display(){
+//       cout<<"The sum is: "<<(a+b);
+//     }
 
-}
+//     void display(int x){
+//       cout<<"The sum is: "<<(a+b+x);
+//     }
+// };
+
+// Operator Overloading
+// class num{
+//   int a;
+//   public:
+//     num(int a){this->a=a;}
+    
+//     void operator--(){ // Pre-increment
+//       cout<<"Hello"<<endl;
+//     }
+
+//     void operator--(int){ // Post-increment
+//       cout<<"Hi"<<endl;
+//     }
+
+//     void display(){
+//       cout<<a;
+//     }
+// };
+// int main(void){
+//   num x(2);
+//   --x;
+//   x--;
+// }
