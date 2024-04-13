@@ -697,3 +697,35 @@ using namespace std;
 //   add((float)4.20,(float)6.9);
 //   add("Jo","Op");
 // }
+
+/*
+s1+s2 (Concatentation)
+s1-s2 (Removing s2 from s1)
+s1->s2 (Copy s1 in s2)
+!s1 (reverse s1)
+*/
+class String{
+    char c[10];
+  public:
+    void input(){
+      cin>>c;
+    }
+
+    void operator=(String ob){
+      int len;
+      for(len=0; c[len]!='\0'; len++);
+      for(int i=0; i<=len; i++){
+        c[i]=ob.c[i];
+      }
+    }
+
+    void display(){
+      cout<<c;
+    }
+};
+int main(void){
+  String c1,c2;
+  c1.input();
+  c2=c1;
+  c2.display();
+}
