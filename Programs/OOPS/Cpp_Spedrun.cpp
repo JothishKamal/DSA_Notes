@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 // // 1
 // class Student{
 //   private:
@@ -33,7 +32,6 @@ using namespace std;
 //   x.appreciation();
 // }
 
-
 // // 2
 // class Student{
 //   int numOfTreesPlanted;
@@ -56,7 +54,6 @@ using namespace std;
 //   }
 //   cout<<Student::totalTreesPlanted;
 // }
-
 
 // // 3
 // class user{
@@ -104,10 +101,9 @@ using namespace std;
 //   x.calculateElectricityBill();
 //   x.displayBill();
 
-
 // }
 
-// // 4 
+// // 4
 // class Customer{
 //   protected:
 //     int phNo;
@@ -240,7 +236,7 @@ using namespace std;
 // int main(void){
 //   int goals[]={1,2,3,4};
 //   Player x(1,"ko",4,goals);
-  
+
 //   x.putPlayerInfo();
 // }
 
@@ -293,7 +289,6 @@ using namespace std;
 // }
 
 // // 10
-
 
 // // 11
 // class Vaccine{
@@ -350,7 +345,6 @@ using namespace std;
 //     friend void studentDetails(student*,course*);
 // };
 
-
 // class course{
 //   int cc;
 //   static int numOfCourses;
@@ -363,7 +357,7 @@ using namespace std;
 //     }
 
 //     friend void studentDetails(student*,course*);
-    
+
 // };
 
 // void studentDetails(student *x, course *y){
@@ -398,9 +392,8 @@ using namespace std;
 
 //   delete students;
 //   delete courses;
-  
-// }
 
+// }
 
 // PPS2.11
 // #include<iostream>
@@ -421,7 +414,7 @@ using namespace std;
 //             cout<<"Enter Employee's Department Code: ";
 //             cin>>departmentCode;
 //         }
-        
+
 //         friend void employeeDetails(Employee*, int, Department*, int);
 // };
 
@@ -462,10 +455,10 @@ using namespace std;
 
 // int main(void){
 //     int n1;
-    
+
 //     cout<<"Enter the number of Employees: ";
 //     cin>>n1;
-    
+
 //     Employee *emp=(Employee*)malloc(sizeof(Employee)*n1);
 //     for(int i=0; i<n1; i++){
 //         emp[i].getEmployee();
@@ -590,7 +583,7 @@ using namespace std;
 //   square.getSide();
 //   square.calcArea();
 //   square.calcPerimeter();
-  
+
 //   Cube cube;
 //   cube.getSide();
 //   cube.calcSurfaceArea();
@@ -701,31 +694,95 @@ using namespace std;
 /*
 s1+s2 (Concatentation)
 s1-s2 (Removing s2 from s1)
-s1->s2 (Copy s1 in s2)
+s1=s2 (Copy s1 in s2)
 !s1 (reverse s1)
 */
-class String{
-    char c[10];
+// #include<stdlib.h>
+// #include<iostream>
+// using namespace std;
+// class String{
+//   char *c;
+//   int len;
+//   public:
+//     String(){
+//       c=(char*)malloc(10);
+//       len=0;
+//     }
+
+//     void input(){
+//       cin>>c;
+//       for(len=0; c[len]!='\0'; len++);
+//     }
+
+//     void operator+(String ob){
+//       int newlen=len+ob.len;
+//       char *tmp=(char*)malloc(newlen+1);
+      
+//       int x=0;
+//       for(int i=0; i<newlen; i++){
+//         if(i<len){
+//           tmp[x++]=c[i];
+//         } else {
+//           tmp[x++]=ob.c[i-len];
+//         }
+//       }
+//       tmp[newlen]='\0';
+//       freeMem();
+//       c=tmp;
+//       len=newlen;
+//     }
+
+//     void operator=(String ob){
+//       int newlen=ob.len;
+//       c=(char*)realloc(c,newlen+1);
+//       for(int i=0; i<newlen; i++){
+//         c[i]=ob.c[i];
+//       }
+//       c[newlen]='\0';
+//       len=newlen;
+//     }
+
+//     void display(){
+//       cout<<c<<endl;
+//       cout<<len<<endl;
+//     }
+
+//     void freeMem(){
+//         free(c);
+//     }
+// };
+// int main(void){
+//   String s1,s2;
+//   s1.input();
+//   s2=s1;
+//   s1+s2; 
+//   s1.display();
+
+//   s1.freeMem();
+//   s2.freeMem();
+// }
+
+// IOstream Operator Overloading 
+class employee{
+  int eno;
+  char name[20];
+  float sal;
   public:
-    void input(){
-      cin>>c;
-    }
-
-    void operator=(String ob){
-      int len;
-      for(len=0; c[len]!='\0'; len++);
-      for(int i=0; i<=len; i++){
-        c[i]=ob.c[i];
-      }
-    }
-
-    void display(){
-      cout<<c;
-    }
+    employee(){}
+    friend istream& operator>>(istream&,employee&);
+    friend ostream& operator<<(ostream&,employee);
 };
+istream& operator>>(istream &in, employee &emp){
+  in>>emp.eno>>emp.name>>emp.sal;
+  return in;
+}
+
+ostream& operator<<(ostream &out, employee emp){
+  out<<emp.eno<<endl<<emp.name<<endl<<emp.sal<<endl;
+  return out;
+}
 int main(void){
-  String c1,c2;
-  c1.input();
-  c2=c1;
-  c2.display();
+  employee x;
+  cin>>x;
+  cout<<x;
 }

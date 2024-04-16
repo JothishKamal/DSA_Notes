@@ -335,3 +335,92 @@ can be overloaded without having a return type
 //   x--;
 // }
 
+// Overloading []
+// class sample1{
+//   public:
+//     int data;
+// };
+// struct sample2{
+//   int data;
+// };
+// class abc{
+//   int mem1;
+//   float mem2;
+//   double mem3;
+//   char mem4;
+//   char mem5[10];
+//   sample1 mem6;
+//   sample2 mem7;
+//   public:
+//     void getData(){
+//       cin>>mem1;
+//       cin>>mem2;
+//       cin>>mem3;
+//       cin>>mem4;
+//       cin>>mem5;
+//       cin>>mem6.data;
+//       cin>>mem7.data;
+//     }
+
+//     void operator[](const char s[]){
+//       if(s=="one") cout<<mem1;
+//       else if(s=="two") cout<<mem2<<endl;
+//       else if(s=="three") cout<<mem3<<endl;
+//       else if(s=="four") cout<<mem4<<endl;
+//       else if(s=="five") cout<<mem5<<endl;
+//       else if(s=="six") cout<<mem6.data<<endl;
+//       else if(s=="seven") cout<<mem7.data<<endl;
+//       else cout<<"Invalid index"<<endl;
+//     }
+// };
+// int main(void){
+//   abc obj;
+//   obj.getData();
+//   obj["five"];
+// }
+
+// // Insertion(>>) and Extraction(<<) Operator Overloading
+class number{
+  int num;
+  public:
+    number(){}
+
+    number(int num){
+      this->num = num;
+    }
+
+    inline number operator+(number ob){
+      return number(num+ob.num);
+    }
+
+    inline number operator-(number ob){
+      return number(num-ob.num);
+    }
+    
+    inline number operator-(){
+      return number(-num);
+    }
+
+    friend istream& operator>>(istream&, number &);
+    friend ostream& operator<<(ostream&, number);
+};
+
+istream& operator>>(istream &in, number &ob){
+  in>>ob.num;
+  return in;
+}
+
+ostream& operator<<(ostream &out, number ob){
+  out<<ob.num;
+  return out;
+}
+
+int main(void){
+  number r1,r2,r3;
+  cin>>r1;
+  cin>>r2;
+  r3=r1+r2;
+  cout<<r3<<endl;
+  cout<<(r1-r2)<<endl;
+  cout<<(-r1);
+}
