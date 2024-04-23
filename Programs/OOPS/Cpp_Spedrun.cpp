@@ -717,7 +717,7 @@ s1=s2 (Copy s1 in s2)
 //     void operator+(String ob){
 //       int newlen=len+ob.len;
 //       char *tmp=(char*)malloc(newlen+1);
-      
+
 //       int x=0;
 //       for(int i=0; i<newlen; i++){
 //         if(i<len){
@@ -755,34 +755,34 @@ s1=s2 (Copy s1 in s2)
 //   String s1,s2;
 //   s1.input();
 //   s2=s1;
-//   s1+s2; 
+//   s1+s2;
 //   s1.display();
 
 //   s1.freeMem();
 //   s2.freeMem();
 // }
 
-// IOstream Operator Overloading 
-class employee{
-  int eno;
-  char name[20];
-  float sal;
-  public:
-    employee(){}
-    friend istream& operator>>(istream&,employee&);
-    friend ostream& operator<<(ostream&,employee);
-};
-istream& operator>>(istream &in, employee &emp){
-  in>>emp.eno>>emp.name>>emp.sal;
-  return in;
-}
+// // IOstream Operator Overloading
+// class employee{
+//   int eno;
+//   char name[20];
+//   float sal;
+//   public:
+//     employee(){}
+//     friend istream& operator>>(istream&,employee&);
+//     friend ostream& operator<<(ostream&,employee);
+// };
+// istream& operator>>(istream &in, employee &emp){
+//   in>>emp.eno>>emp.name>>emp.sal;
+//   return in;
+// }
 
-ostream& operator<<(ostream &out, employee emp){
-  out<<emp.eno<<endl<<emp.name<<endl<<emp.sal<<endl;
-  return out;
-}
-int main(void){
-  employee x;
-  cin>>x;
-  cout<<x;
-}
+// ostream& operator<<(ostream &out, employee emp){
+//   out<<emp.eno<<endl<<emp.name<<endl<<emp.sal<<endl;
+//   return out;
+// }
+// int main(void){
+//   employee x;
+//   cin>>x;
+//   cout<<x;
+// }
