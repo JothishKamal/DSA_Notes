@@ -786,3 +786,77 @@ s1=s2 (Copy s1 in s2)
 //   cin>>x;
 //   cout<<x;
 // }
+
+// // PPS3 tarun
+// 1
+class db;
+class dm{
+  float m,cm;
+  public:
+    void get(){
+      cout<<"Enter the value in meter and centimeter:\n";
+      cout<<"Enter meter value:";
+      cin>>m;
+      cout<<"Enter centimeter value:";
+      cin>>cm;
+    }
+
+    friend void add(dm&,db&);    
+    
+    void put(){
+      cout<<m;
+    }
+};
+
+class db{
+  float f,i;
+  public:
+    void get(){
+      cout<<"Enter the value in feet and incehs:\n";
+      cout<<"Enter feet value:";
+      cin>>f;
+      cout<<"Enter inches value:";
+      cin>>i;
+    }
+    friend void add(dm&,db&);
+};
+
+void add(dm& ob1, db& ob2){
+  ob1.m=(ob1.m + ob1.cm*0.01) + (ob2.f*0.3 + ob2.i*0.0254);
+}
+
+int main(void){
+  dm x; db y;
+  x.get(); y.get();
+  add(x,y);
+  x.put();
+}
+// 2
+// 3
+// class Point{
+//   float x,y;
+//   public:
+//     friend istream& operator>>(istream&,Point&);
+//     friend ostream& operator<<(ostream&,Point);
+
+// };
+
+// istream& operator>>(istream &in, Point &ob){
+//   in>>ob.x>>ob.y;
+//   return in;
+// }
+
+// ostream& operator<<(ostream &out,Point ob){
+//   out<<ob.x<<" "<<ob.y;
+//   return out;
+// }
+
+// int main(void){
+//   Point first,second;
+//   cin>>first;
+//   cin>>second;
+//   cout<<first<<endl;
+//   cout<<second<<endl;
+// }
+
+// 4
