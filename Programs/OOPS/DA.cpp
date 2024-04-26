@@ -1,77 +1,77 @@
 // // 4
-#include<iostream>
-using namespace std;
-template <typename type>
-class Stack{
-  type *stack;
-  int top;
-  public:
-    Stack(){
-      stack=new type[10];
-      top=-1;
-    }
+// #include<iostream>
+// using namespace std;
+// template <typename type>
+// class Stack{
+//   type *stack;
+//   int top;
+//   public:
+//     Stack(){
+//       stack=new type[10];
+//       top=-1;
+//     }
     
-    void push(type x){
-      if(top==9) cout<<"Stack Overflow"<<endl;
-      else stack[++top]=x;
-    }
+//     void push(type x){
+//       if(top==9) cout<<"Stack Overflow"<<endl;
+//       else stack[++top]=x;
+//     }
 
-    void display(){
-      if(top==-1) cout<<"Stack is Empty"<<endl;
-      else
-      for(int i=top; i>=0; i--){
-        cout<<stack[i]<<endl;
-      }
-    }
+//     void display(){
+//       if(top==-1) cout<<"Stack is Empty"<<endl;
+//       else
+//       for(int i=top; i>=0; i--){
+//         cout<<stack[i]<<endl;
+//       }
+//     }
 
-    inline type pop(){
-      if(top>=0){
-        type tmp=stack[top];
-        stack[top--]=0;
-        return tmp;
-      } else{
-        return -1;
-      }
-    }
+//     inline type pop(){
+//       if(top>=0){
+//         type tmp=stack[top];
+//         stack[top--]=0;
+//         return tmp;
+//       } else{
+//         return -1;
+//       }
+//     }
 
-    ~Stack(){
-      delete[] stack;
-    }
+//     ~Stack(){
+//       delete[] stack;
+//     }
 
-};
-int main(void){
-  Stack<int> x;
-  int ch;
-  do{
-    cout<<endl<<"Stack Implementation without STL"<<endl;
-    cout<<"--------------------------------"<<endl;
-    cout<<"1. Push"<<endl;
-    cout<<"2. Pop"<<endl;
-    cout<<"3. Display"<<endl;
-    cout<<"4. Exit"<<endl;
-    cout<<"Enter your choice: "; cin>>ch;
-    switch(ch){
-      case 1:
-        int tmp;
-        cout<<"Enter the element to be pushed: "; cin>>tmp;
-        x.push(tmp);
-        break;
-      case 2:
-        tmp=x.pop();
-        if(tmp==-1) cout<<"Stack Underflow"<<endl;
-        else cout<<"Popped element: "<<x.pop()<<endl;
-        break;
-      case 3:
-        cout<<"Stack: "<<endl;
-        x.display();
-      case 4:
-        break;
-      default:
-        cout<<"Invalid choice."<<endl;
-    }
-    if(ch==4) break;
-  } while(1);
-}
+// };
+// int main(void){
+//   Stack<int> x;
+//   int ch;
+//   do{
+//     cout<<endl<<"Stack Implementation without STL"<<endl;
+//     cout<<"--------------------------------"<<endl;
+//     cout<<"1. Push"<<endl;
+//     cout<<"2. Pop"<<endl;
+//     cout<<"3. Display"<<endl;
+//     cout<<"4. Exit"<<endl;
+//     cout<<"Enter your choice: "; cin>>ch;
+//     switch(ch){
+//       case 1:
+//         int tmp;
+//         cout<<endl<<"Enter the element to be pushed: "; cin>>tmp;
+//         x.push(tmp);
+//         break;
+//       case 2:
+//         tmp=x.pop();
+//         if(tmp==-1) cout<<endl<<"Stack Underflow"<<endl;
+//         else cout<<endl<<"Popped element: "<<x.pop()<<endl;
+//         break;
+//       case 3:
+//         cout<<endl<<"Stack: "<<endl;
+//         x.display();
+//       case 4:
+//         break;
+//       default:
+//         cout<<endl<<"Invalid choice."<<endl;
+//     }
+//     if(ch==4) break;
+//   } while(1);
+// }
 
 // // 5
 // #include <iostream>
