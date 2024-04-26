@@ -380,47 +380,134 @@ can be overloaded without having a return type
 // }
 
 // // Insertion(>>) and Extraction(<<) Operator Overloading
-class number{
-  int num;
-  public:
-    number(){}
+// class number{
+//   int num;
+//   public:
+//     number(){}
 
-    number(int num){
-      this->num = num;
-    }
+//     number(int num){
+//       this->num = num;
+//     }
 
-    inline number operator+(number ob){
-      return number(num+ob.num);
-    }
+//     inline number operator+(number ob){
+//       return number(num+ob.num);
+//     }
 
-    inline number operator-(number ob){
-      return number(num-ob.num);
-    }
+//     inline number operator-(number ob){
+//       return number(num-ob.num);
+//     }
     
-    inline number operator-(){
-      return number(-num);
-    }
+//     inline number operator-(){
+//       return number(-num);
+//     }
 
-    friend istream& operator>>(istream&, number &);
-    friend ostream& operator<<(ostream&, number);
-};
+//     friend istream& operator>>(istream&, number &);
+//     friend ostream& operator<<(ostream&, number);
+// };
 
-istream& operator>>(istream &in, number &ob){
-  in>>ob.num;
-  return in;
-}
+// istream& operator>>(istream &in, number &ob){
+//   in>>ob.num;
+//   return in;
+// }
 
-ostream& operator<<(ostream &out, number ob){
-  out<<ob.num;
-  return out;
-}
+// ostream& operator<<(ostream &out, number ob){
+//   out<<ob.num;
+//   return out;
+// }
 
-int main(void){
-  number r1,r2,r3;
-  cin>>r1;
-  cin>>r2;
-  r3=r1+r2;
-  cout<<r3<<endl;
-  cout<<(r1-r2)<<endl;
-  cout<<(-r1);
-}
+// int main(void){
+//   number r1,r2,r3;
+//   cin>>r1;
+//   cin>>r2;
+//   r3=r1+r2;
+//   cout<<r3<<endl;
+//   cout<<(r1-r2)<<endl;
+//   cout<<(-r1);
+// }
+
+// // Special Case of Operator Overloading - Type Casting
+// class number{
+//   int num;
+//   public:
+//     number(){num=0;}
+//     number(int a){
+//       num = a;
+//     }
+//     operator int(){
+//       return num;
+//     }
+//     void display(){
+//       cout<<num<<endl;
+//     }
+// };
+// int main(void){
+//   number x(69);
+//   int y;
+//   y=x; // Calls operator function
+//   cin>>y;
+//   x=y; // Calls parameterized constructor
+//   x.display();
+// }
+
+// // Templates - Function Template
+// template <typename a>
+// void findData(a arr[], a ele, int len){
+//   int flag=0;
+//   for(int i=0; i<len; i++){
+//     if(arr[i]==ele){
+//       flag=1;
+//       break;
+//     }
+//   } 
+//   if(flag) cout<<"Data present"<<endl;
+//   else cout<<"Data absent"<<endl;
+// }
+// int main(void){
+//   int arr1[5],e1;
+//   float arr2[5],e2;
+//   char arr3[5],e3;
+//   for(int i=0; i<5; i++){
+//     cin>>arr1[i]>>arr2[i]>>arr3[i];
+//   }
+//   cin>>e1>>e2>>e3;
+//   findData(arr1,e1,5);
+//   findData(arr2,e2,5);
+//   findData(arr3,e3,5);
+// }
+
+// // Templates - Class Template
+// template <typename a1, typename a2>
+// class student{
+//   a1 rno;
+//   a2 name;
+//   public:
+//     student(){
+//       name=new a2[10];
+//     }
+//     void read(){
+//       cin>>rno>>name;
+//     }
+//     void write(){
+//       cout<<rno<<name<<endl;
+//     }
+//     ~student(){
+//       delete[] name;
+//     }
+// };
+// int main(void){
+//   student<int,char*> x;
+//   x.read();
+//   x.write();
+// }
+
+// // STL
+/*
+Stack 
+Queue
+DEQueue
+Priority Queue
+Map
+Vector
+Iterator
+List
+*/

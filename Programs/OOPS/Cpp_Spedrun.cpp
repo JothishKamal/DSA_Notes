@@ -787,52 +787,71 @@ s1=s2 (Copy s1 in s2)
 //   cout<<x;
 // }
 
-// // PPS3 tarun
-// 1
-class db;
-class dm{
-  float m,cm;
-  public:
-    void get(){
-      cout<<"Enter the value in meter and centimeter:\n";
-      cout<<"Enter meter value:";
-      cin>>m;
-      cout<<"Enter centimeter value:";
-      cin>>cm;
-    }
+// // // PPS3 tarun
+// // 1
+// class db;
+// class dm{
+//   float m,cm;
+//   public:
+//     void get(){
+//       cout<<"Enter the value in meter and centimeter:\n";
+//       cout<<"Enter meter value:";
+//       cin>>m;
+//       cout<<"Enter centimeter value:";
+//       cin>>cm;
+//     }
 
-    friend void add(dm&,db&);    
+//     friend void add(dm&,db&);    
     
-    void put(){
-      cout<<m;
-    }
-};
+//     void put(){
+//       cout<<m;
+//     }
+// };
 
-class db{
-  float f,i;
-  public:
-    void get(){
-      cout<<"Enter the value in feet and incehs:\n";
-      cout<<"Enter feet value:";
-      cin>>f;
-      cout<<"Enter inches value:";
-      cin>>i;
-    }
-    friend void add(dm&,db&);
-};
+// class db{
+//   float f,i;
+//   public:
+//     void get(){
+//       cout<<"Enter the value in feet and incehs:\n";
+//       cout<<"Enter feet value:";
+//       cin>>f;
+//       cout<<"Enter inches value:";
+//       cin>>i;
+//     }
+//     friend void add(dm&,db&);
+// };
 
-void add(dm& ob1, db& ob2){
-  ob1.m=(ob1.m + ob1.cm*0.01) + (ob2.f*0.3 + ob2.i*0.0254);
-}
+// void add(dm& ob1, db& ob2){
+//   ob1.m=(ob1.m + ob1.cm*0.01) + (ob2.f*0.3 + ob2.i*0.0254);
+// }
 
-int main(void){
-  dm x; db y;
-  x.get(); y.get();
-  add(x,y);
-  x.put();
-}
-// 2
-// 3
+// int main(void){
+//   dm x; db y;
+//   x.get(); y.get();
+//   add(x,y);
+//   x.put();
+// }
+
+// // 2
+// inline float calcSalary(int basic, int hra, int da){
+//   return basic+hra+da;
+// }
+
+// inline float calcSalary(int wph, int nh){
+//   return wph*nh;
+// }
+
+// inline float calcSalary(const int consolidated){
+//   return consolidated;
+// }
+
+// int main(void){
+//   int basic, hra, da, wph, nh, consolidated;
+//   cin>>basic>>hra>>da>>wph>>nh>>consolidated;
+//   cout<<calcSalary(basic,hra,da)<<calcSalary(wph,nh)<<calcSalary(consolidated);
+// }
+
+// // 3
 // class Point{
 //   float x,y;
 //   public:
@@ -859,4 +878,73 @@ int main(void){
 //   cout<<second<<endl;
 // }
 
-// 4
+// // 4
+// class Matrix{
+//   int rows,columns;
+//   int **matrix;
+//   public:
+//     void get(){
+//       cin>>rows>>columns;
+//       matrix=(int**)malloc(sizeof(int*)*rows);
+//       for(int i=0; i<rows; i++){
+//         matrix[i]=(int*)malloc(sizeof(int)*columns);
+//         for(int j=0; j<columns; j++){
+//           cin>>matrix[i][j];
+//         }
+//       }
+//     }
+
+//     void operator+(Matrix ob){
+//       if(rows==ob.rows && columns==ob.columns){
+//         for(int i=0; i<rows; i++){
+//           for(int j=0; j<columns; j++){
+//             matrix[i][j]+=ob.matrix[i][j];
+//           }
+//         }
+//       } else {
+//         cout<<"Rows and Columns mismatch"<<endl;
+//       }
+//     }
+
+//     void operator-(Matrix ob){
+//       if(rows==ob.rows && columns==ob.columns){
+//         for(int i=0; i<rows; i++){
+//           for(int j=0; j<columns; j++){
+//             matrix[i][j]-=ob.matrix[i][j];
+//           }
+//         }
+//       } else {
+//         cout<<"Rows and Columns mismatch"<<endl;
+//       }
+//     }
+
+//     void put(){
+//       for(int i=0; i<rows; i++){
+//         for(int j=0; j<columns; j++){
+//           cout<<matrix[i][j]<<" ";
+//         }
+//         cout<<endl;
+//       }
+//     }
+
+// };
+
+// int main(void){
+//   Matrix m1,m2;
+//   m1.get(); m2.get();
+  
+//   char ch;
+//   cin>>ch;
+//   switch(ch){
+//     case '+':
+//       m1+m2; 
+//       break;
+//     case '-':
+//       m1-m2; 
+//       break;
+//     default:
+//       cout<<"Invalid operation"<<endl;
+//   }
+//   m1.put();
+// }
+

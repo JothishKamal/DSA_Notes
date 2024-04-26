@@ -2,7 +2,6 @@
 using namespace std;
 
 // // Matrix
-// using namespace std;
 // class Matrix{
 //   int rows,columns;
 //   int **matrix;
