@@ -403,6 +403,8 @@ Char Arrays(Strings)
 //     max=0;
 //     for(int j=1;j<4-i;j++) max=j;
 //     temp=a[max];
+//     a[max]=a[n-i-1];
+//     a[n-i-1]=tmp;
 //   }
 // }
 

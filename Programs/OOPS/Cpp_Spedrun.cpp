@@ -948,3 +948,351 @@ s1=s2 (Copy s1 in s2)
 //   m1.put();
 // }
 
+// // Vector
+// #include <iostream> 
+// #include <vector> 
+// #include <string> 
+// //#include <cstdlib> 
+// using namespace std; 
+// main(){ 
+//     vector<int> ss,vec1; 
+//     vector<int>::iterator it; 
+//     int choice,item; 
+//     do{ 
+//         cout<<"Vector<int> Implementation in STL"<<endl; 
+//         cout<<"---------------------------------"<<endl; 
+//         cout<<"1.Insert Element into the Vector   "; 
+//         cout<<"2.Delete Last Element of the Vector"<<endl; 
+//         cout<<"3.Size of the Vector               "; 
+//         cout<<"4.Display by Index"<<endl; 
+//         cout<<"5.Display by Iterator              "; 
+//         cout<<"6.Clear the Vector"<<endl; 
+//         cout<<"7.Exit"<<endl; 
+//         cout<<"Enter your Choice: "; 
+//         cin>>choice; 
+//         switch(choice){ 
+//         case 1: 
+//             cout<<"Enter value to be inserted: "; 
+//             cin>>item; 
+//             ss.push_back(item); 
+//             //ss.push_front(item); 
+//             break; 
+//         case 2: 
+//             cout<<"Delete Last Element Inserted:"<<endl; 
+//             ss.pop_back(); 
+//             break; 
+//         case 3: 
+//             cout<<"Size of Vector: "; 
+//             cout<<ss.size()<<endl; 
+//             break; 
+//         case 4: 
+//             cout<<"Displaying Vector by Index: "; 
+//             int val; 
+//             val=ss.size(); 
+//             cout<<endl<<val<<endl; 
+//             for (int i = 0; i < val; i++) 
+//                 cout<<ss[i]<<" "; 
+//             cout<<endl; 
+//             break; 
+//         case 5: 
+//             cout<<"Displaying Vector by Iterator: "; 
+//             for (it = ss.begin(); it != ss.end(); it++) 
+//                 cout<<*it<<" "; 
+//             cout<<endl; 
+//             break; 
+//         case 6: 
+//             ss.clear(); 
+//             cout<<"Vector Cleared"<<endl; 
+//             break; 
+//         case 7: 
+//             //exit(1); 
+//             break; 
+//         default: 
+//             cout<<"Wrong Choice"<<endl; 
+//         } 
+//         cout<<endl; 
+//     }while(choice!=7); 
+// }
+
+// // List
+// #include <iostream> 
+// #include <list> 
+// #include <string> 
+// #include <cstdlib> 
+// using namespace std; 
+// main(){ 
+//     int myints[] = {5, 6, 3, 2, 7}; 
+//     list<int> l,l1(myints,myints+sizeof(myints)/sizeof(int)); 
+//     list<int>::iterator it; 
+//     int choice,item; 
+//     while (1){ 
+//         cout<<"List Implementation in Stl"; 
+//         cout<<"\n---------------------"<<endl; 
+//         cout<<"1.Insert Element at the Front    "; 
+//         cout<<"2.Insert Element at the End"<<endl; 
+//         cout<<"3.Delete Element at the Front    "; 
+//         cout<<"4.Delete Element at the End"<<endl; 
+//         cout<<"5.First Element of List          "; 
+//         cout<<"6.Last Element of the List"<<endl; 
+//         cout<<"7.Size of the List               "; 
+//         cout<<"8.Resize List"<<endl; 
+//         cout<<"9.Remove Elements any element    "; 
+//         cout<<"10.Remove Duplicate Values"<<endl; 
+//         cout<<"11.Reverse the order of elements "; 
+//         cout<<"12.Sort Forward List"<<endl; 
+//         cout<<"13.Merge Sorted Lists            "; 
+//         cout<<"14.Display Forward List"<<endl; 
+//         cout<<"15.Exit"<<endl; 
+//         cout<<"Enter your Choice: "; 
+//         cin>>choice; 
+//         switch(choice){ 
+//         case 1: 
+//             cout<<"Enter value to be inserted at the front: "; 
+//             cin>>item; 
+//             l.push_front(item); 
+//             break; 
+//         case 2: 
+//             cout<<"Enter value to be inserted at the end: "; 
+//             cin>>item; 
+//             l.push_back(item); 
+//             break; 
+//         case 3: 
+//             item = l.front(); 
+//             l.pop_front(); 
+//      cout<<"Element "<<item<<" deleted"<<endl; 
+//             break; 
+//         case 4: 
+//             item = l.back(); 
+//             l.pop_back(); 
+//      cout<<"Element "<<item<<" deleted"<<endl; 
+//             break; 
+//         case 5: 
+//      cout<<"Front Element of the List: "; 
+//      cout<<l.front()<<endl; 
+//             break; 
+//         case 6: 
+//             cout<<"Last Element of the List: "; 
+//             cout<<l.back()<<endl; 
+//             break; 
+//         case 7: 
+//             cout<<"Size of the List: "<<l.size()<<endl; 
+//             break; 
+//         case 8: 
+//             cout<<"Enter new size of the List: "; 
+//             cin>>item; 
+//             if (item <= l.size()) 
+//                 l.resize(item); 
+//             else 
+//                 l.resize(item, 0); 
+//             break; 
+//         case 9: 
+//             cout<<"Enter element to be deleted: "; 
+//             cin>>item; 
+//             l.remove(item); 
+//             break; 
+//         case 10: 
+//             l.unique(); 
+//             cout<<"Duplicate Items Deleted"<<endl; 
+//             break; 
+//         case 11: 
+//             l.reverse(); 
+//             cout<<"List reversed"<<endl; 
+//             break; 
+//         case 12: 
+//             l.sort(); 
+//             cout<<"List Sorted"<<endl; 
+//             break; 
+//         case 13: 
+//             l1.sort(); 
+//             l.sort(); 
+//             l.merge(l1); 
+//             cout<<"Lists Merged after sorting"<<endl; 
+//             break; 
+//         case 14: 
+//             cout<<"Elements of the List:  "; 
+//             for (it = l.begin(); it != l.end(); it++) 
+//                 cout<<*it<<"  "; 
+//             cout<<endl; 
+//             break; 
+//          case 15: 
+//             exit(1); 
+//         default: 
+//             cout<<"Wrong Choice"<<endl; 
+//         }    }    }
+
+// // Map
+// #include <iostream> 
+// #include <map> 
+// #include <string> 
+// #include <cstdlib> 
+// using namespace std; 
+// main(){ 
+//     map<char,int> mp; 
+//     map<char,int>::iterator it; 
+//     int choice, item; 
+//     char s; 
+//     while (1){ 
+//         cout<<"Map<int> Implementation in STL"<<endl; 
+//         cout<<"------------------------------"<<endl; 
+//         cout<<"1.Insert Element into the Map   "; 
+//         cout<<"2.Delete Element of the Map"<<endl; 
+//         cout<<"3.Size of the Map               "; 
+//         cout<<"4.Find Element at a key in Map"<<endl; 
+//         cout<<"5.Display by Iterator           "; 
+//         cout<<"6.Search for an Element with it's key"<<endl; 
+//         cout<<"7.Exit"<<endl; 
+//         cout<<"Enter your Choice: "; 
+//         cin>>choice; 
+//         switch(choice){ 
+//         case 1: 
+//             cout<<"Enter value to be inserted: "; 
+//             cin>>item; 
+//             cout<<"Enter the key: "; 
+//             cin>>s; 
+//             mp.insert(pair<char,int>(s,item)); 
+//             break; 
+//         case 2: 
+//             cout<<"Enter the mapped key to be deleted: "; 
+//             cin>>s; 
+//             if (mp.count(s) != 0) 
+//                 mp.erase(s); 
+//             else 
+//                 cout<<"\nData not found!"; 
+//             break; 
+//         case 3: 
+//      cout<<"Size of Map: "; 
+//      cout<<mp.size()<<endl; 
+//             break; 
+//         case 4: 
+//      cout<<"Enter the key at which value to be found: "; 
+//             cin>>s; 
+//             if (mp.count(s) != 0) 
+//                 cout<<mp.find(s)->second<<endl; 
+//             else 
+//                 cout<<"No Element Found"<<endl; 
+//             break; 
+//         case 5: 
+//      cout<<"Displaying Map by Iterator: "<< endl; 
+//             for (it = mp.begin(); it != mp.end(); it++){ 
+//                 cout << (*it).first << ":" << (*it).second << endl; 
+//             } 
+//             break; 
+//         case 6: 
+//             cout<<"Enter the key of the value to be searched for: "; 
+//             cin>>s; 
+//             cout<<mp.count(s)<<endl; 
+//             break; 
+//        case 7: 
+//             exit(1); 
+//         default: 
+//             cout<<"Wrong Choice"<<endl; 
+//         } 
+//         cout<<endl; 
+//     }} 
+
+
+// // DEque
+// #include <deque> 
+// #include <iostream> 
+// using namespace std; 
+// void show(deque<int> g){ 
+//     deque<int>::iterator it; 
+//     for (it = g.begin(); it != g.end(); ++it) 
+//         cout << '\t' << *it; 
+//     cout << '\n'; 
+// } 
+// main(){ 
+//     deque<int> q; 
+//     q.push_back(10); 
+//     q.push_front(20); 
+//     q.push_back(30); 
+//     q.push_front(15); 
+//     cout << "The deque Q is : "; 
+//     show(q); 
+//     cout << "\nq.size() : " << q.size(); 
+//     cout << "\nq.max_size() : " << q.max_size(); 
+//     cout << "\nq.at(2) : " << q.at(2); 
+//     cout << "\nq.front() : " << q.front(); 
+//     cout << "\nq.back() : " << q.back(); 
+//     cout << "\nq.pop_front() : "; 
+//     q.pop_front(); 
+//     show(q); 
+//     cout << "\nq.pop_back() : "; 
+//     q.pop_back(); 
+//     show(q); 
+// }
+
+// // Template Inheritance - 1
+// #include <iostream> 
+// using namespace std; 
+// template <typename a> 
+// class Test{ 
+// protected: 
+//     a x; 
+// public: 
+//     Test(a x) {this->x=x;} 
+//     a MyMethod1() { return x; } 
+// }; 
+// template <typename T1,typename T2> 
+// class Another : public Test<T1>{ 
+//     T2 val; 
+// public: 
+//     Another(T1 x,T2 y):Test<T1>(x){val=y;} 
+//     void MyMethod2(){ 
+//         cout<<Test<T1>::MyMethod1(); 
+//         cout<<endl<<val; 
+//     } 
+// }; 
+// int main(){ 
+//     Test<float> obj1(10.5); 
+//     cout<<"obj1.x = "<<obj1.MyMethod1()<<endl; 
+//     Test<int> obj2(100); 
+//     cout<<"obj2.x = "<<obj2.MyMethod1()<<endl; 
+//     Another<char,int> a('a',100); 
+//     a.MyMethod1(); 
+//     a.MyMethod2(); 
+// }
+
+// // Template Inheritance - 2
+// #include <iostream> 
+// using namespace std; 
+// template <typename T> class parent{ 
+// public: 
+//     T a; 
+// public: 
+//     parent(T x){a=x;} 
+//     void sqr(){cout<<endl<<a*a;} 
+//     virtual void product(){}
+// }; 
+// template <typename S> class child:public parent<S>{ 
+//     int b; 
+// public: 
+//     child(S x,int y):parent<S>(x)    { 
+//         b=y; 
+//     } 
+//     void product()    { 
+//         cout<<endl<<parent<S>::a*b; 
+//         } 
+// }; 
+// main(){ 
+//     parent<float> obj1(11.567); 
+//     obj1.sqr(); 
+//     child<int> obj2(10,20);
+//     obj2.sqr(); 
+//     obj2.product(); 
+// }
+
+// // Selection Sort
+// void sort(int arr[],int n){
+//   int maxIdx,tmp;
+//   for(int i=0; i<n; i++){
+//     maxIdx=0;
+//     for(int j=0; j<n-i; j++){
+//       if(arr[maxIdx]<arr[j]) maxIdx=j;
+//     }
+//     tmp=arr[maxIdx];
+//     arr[maxIdx]=arr[n-i-1];
+//     arr[n-i-1]=tmp;
+//   }
+// }
+

@@ -16,16 +16,17 @@ def bakeMyToss(sauce, light):
     return toss_sauce
 
 def main():
-    sauce_1 = twist(sauce)
+    # sauce_1 = twist(sauce)
 
-    sauce_2 = untwisttwist(sauce_1)
+    # sauce_2 = untwisttwist(sauce_1)
 
     light = electricity  
-    bakeMyToss_sauce = bakeMyToss(sauce_2, light)
+    bakeMyToss_sauce = bakeMyToss(sauce, light)
 
-    bakeMyTossed_wrapped = bakeMyToss_sauce.encode()
+    bakeMyTossed_wrapped = bakeMyToss_sauce
     print("Digital Pizza:", bakeMyTossed_wrapped)
 
 if __name__ == "__main__":
-    
+    sauce=b'\x1a\x03\x17\x10\n\x082\x1f\x14?)\n\t62\r]07Z\x11@\x07'.decode()
+    electricity="gdscisawayoflifenotjustanotherclub".encode()
     main()
