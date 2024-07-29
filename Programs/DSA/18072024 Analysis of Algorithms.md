@@ -189,5 +189,13 @@ n-(k+1)=1 => k=n-2
   => O(n^2)
 ```
 ### Tree Method:
+
+```cpp
+/*
+Q. 
+T(n)=c+2.T(n/2); n>1
+T(1)=c; n=1
+*/
+```
 ### Back Substitution Method:
 # Master's Theorem:
