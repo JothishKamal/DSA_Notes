@@ -72,84 +72,105 @@
 //   } while (loop);
 // }
 
-#include <stdio.h>
+// // Parentheses Matching
+// #include <stdio.h>
 
-const int size = 100;
-char stack[size];
-int top = -1;
+// const int size = 100;
+// char stack[size];
+// int top = -1;
 
-int main(void)
-{
-  char exp[100];
-  scanf("%s", exp);
-  int len = 0;
-  for (len = 0; exp[len] != '\0'; len++)
-    ;
+// int main(void)
+// {
+//   char exp[100];
+//   scanf("%s", exp);
+//   int len = 0;
+//   for (len = 0; exp[len] != '\0'; len++)
+//     ;
 
-  for (int i = 0; i < len; i++)
-  {
-    if (exp[i] == '(' || exp[i] == '[' || exp[i] == '{')
-    {
-      if (top >= size - 1)
-      {
-        printf("Stack Overflow\n");
-        return 1;
-      }
-      else
-      {
-        stack[++top] = exp[i];
-      }
-    }
-    else if (exp[i] == ')')
-    {
-      if (top == -1 || stack[top] != '(')
-      {
-        printf("Invalid\n");
-        return 1;
-      }
-      else
-      {
-        top--;
-      }
-    }
-    else if (exp[i] == ']')
-    {
-      if (top == -1 || stack[top] != '[')
-      {
-        printf("Invalid\n");
-        return 1;
-      }
-      else
-      {
-        top--;
-      }
-    }
-    else if (exp[i] == '}')
-    {
-      if (top == -1 || stack[top] != '{')
-      {
-        printf("Invalid\n");
-        return 1;
-      }
-      else
-      {
-        top--;
-      }
-    }
-    else
-    {
-      continue;
-    }
-  }
+//   for (int i = 0; i < len; i++)
+//   {
+//     if (exp[i] == '(' || exp[i] == '[' || exp[i] == '{')
+//     {
+//       if (top >= size - 1)
+//       {
+//         printf("Stack Overflow\n");
+//         return 1;
+//       }
+//       else
+//       {
+//         stack[++top] = exp[i];
+//       }
+//     }
+//     else if (exp[i] == ')')
+//     {
+//       if (top == -1 || stack[top] != '(')
+//       {
+//         printf("Invalid\n");
+//         return 1;
+//       }
+//       else
+//       {
+//         top--;
+//       }
+//     }
+//     else if (exp[i] == ']')
+//     {
+//       if (top == -1 || stack[top] != '[')
+//       {
+//         printf("Invalid\n");
+//         return 1;
+//       }
+//       else
+//       {
+//         top--;
+//       }
+//     }
+//     else if (exp[i] == '}')
+//     {
+//       if (top == -1 || stack[top] != '{')
+//       {
+//         printf("Invalid\n");
+//         return 1;
+//       }
+//       else
+//       {
+//         top--;
+//       }
+//     }
+//     else
+//     {
+//       continue;
+//     }
+//   }
 
-  if (top == -1)
-  {
-    printf("Valid\n");
-  }
-  else
-  {
-    printf("Invalid\n");
-  }
+//   if (top == -1)
+//   {
+//     printf("Valid\n");
+//   }
+//   else
+//   {
+//     printf("Invalid\n");
+//   }
 
-  return 0;
-}
+//   return 0;
+// }
+
+// // Recursion
+// #include <stdio.h>
+
+// int factorial(int n)
+// {
+//   if (n == 1 || n == 0)
+//     return 1;
+//   else
+//   {
+//     return n*factorial(n - 1);
+//   }
+// }
+
+// int main(void)
+// {
+//   int n = 5, fact = 1;
+//   fact = factorial(n);
+//   printf("%d", fact);
+// }
