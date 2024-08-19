@@ -1,13 +1,14 @@
 # Asymptotic Notations:
+
 Consider an array of n elements.
 Consider the first element is present in the first position => **Best Case(Ω notation)** - Least number of iterations (1)
 Consider the first element is present in the last position => **Worst Case(Big O notation)** - Most number of iterations (n)
 Consider the first element is present in between the first and last position => **Average Case(θ notation)**
 
-*Example*: Searching an element - Ω(1) O(n) θ((1+n)/2)
-
+_Example_: Searching an element - Ω(1) O(n) θ((1+n)/2)
 
 # Time Complexity
+
 ## Iterative Program (Looping):
 
 ```cpp
@@ -39,14 +40,14 @@ int main(void){
 
 /*
 i = 1 2 3 4 5 ... n
-s = 1 3 6 10 15 ... k  
+s = 1 3 6 10 15 ... k
 O((n(n+1))/2)=O(n^2)
 */
 ```
 
 ```cpp
 // 2^k = n => O(log_2 n)
-for(int i=1; i<=n; i*2){
+for(int i=1; i<=n; i*=2){
   printf("vit\n");
 }
 ```
@@ -62,7 +63,7 @@ for(int i=1; i<=n; i++){
 
 ```cpp
 for(int i=1; i<=n; i++){
-  for(int j=1; j<=i*2; j++){
+  for(int j=1; j<=i; j++){
     for(int k=1; k<=100; k++){
       printf("vit\n");
     }
@@ -92,7 +93,7 @@ k = 1*100 4*100 9*100 ... n^2*100
 */
 ```
 
-```cpp
+````cpp
 // Q
 for(int i=1; i<=n/2; i++){ // n/2
   for(int j=n; j<=n/2; j++){ // n/2
@@ -121,12 +122,14 @@ j = n n/2 n/3 ... 1
 k = n*100 (n/2)*100 (n/3)*100 ... 100
 100*n*(1+1/2+1/3+1/4+...+ 1/n) = O(n.logn)
 */
-```
+````
+
 ## Recursive Program:
 
 Termination condition for a recursive program => Stack becomes empty.
 
 Steps:
+
 1. Convert to Recurrence Relation
 2. Back Substitution/Tree Method
 
@@ -188,14 +191,17 @@ n-(k+1)=1 => k=n-2
     =(n(n+1))/2
   => O(n^2)
 ```
+
 ### Tree Method:
 
 ```cpp
 /*
-Q. 
+Q.
 T(n)=c+2.T(n/2); n>1
 T(1)=c; n=1
 */
 ```
+
 ### Back Substitution Method:
+
 # Master's Theorem:
