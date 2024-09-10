@@ -269,3 +269,150 @@
 //     printf("Invalid");
 //   printf("\n");
 // }
+
+// #include <stdio.h>
+// const int size = 100;
+// char stack[size];
+// int top = -1;
+
+// int main(void)
+// {
+//   char exp[size];
+//   fgets(exp, size, stdin);
+//   exp[size - 1] = '\0';
+
+//   for (int i = 0; i < size; i++)
+//   {
+//     if (exp[i] == '(' || exp[i] == '[' || exp[i] == '{')
+//     {
+//       stack[++top] = exp[i];
+//     }
+//     else if (exp[i] == ')')
+//     {
+//       if (top == -1 || stack[top] != '(')
+//       {
+//         printf("Invalid");
+//       }
+//       else
+//         top--;
+//     }
+//     else if (exp[i] == ']')
+//     {
+//       if (top == -1 || stack[top] != '[')
+//       {
+//         printf("Invalid");
+//       }
+//       else
+//         top--;
+//     }
+//     else if (exp[i] == '}')
+//     {
+//       if (top == -1 || stack[top] != '{')
+//       {
+//         printf("Invalid");
+//       }
+//       else
+//         top--;
+//     }
+//   }
+//   if (top == -1)
+//     printf("Valid");
+//   else
+//     printf("Invalid");
+// }
+
+// // 2
+// #include <stdio.h>
+// #include <string.h>
+// const int size = 100;
+// char stack[size];
+// int top = -1;
+// void push(char x)
+// {
+//   if (top >= size - 1)
+//     printf("Stack Overflow\n");
+//   else
+//     stack[++top] = x;
+// }
+
+// char pop()
+// {
+//   if (top == -1)
+//     return '\0';
+//   else
+//     return stack[top--];
+// }
+
+// char peek()
+// {
+//   if (top == -1)
+//     return '\0';
+//   else
+//     return stack[top];
+// }
+
+// int isOperator(char x)
+// {
+//   if (x == '+' || x == '-' || x == '*' || x == '/' || x == '^')
+//     return 1;
+//   else
+//     return 0;
+// }
+
+// int precedence(char x)
+// {
+//   switch (x)
+//   {
+//   case '+':
+//   case '-':
+//     return 1;
+//   case '*':
+//   case '/':
+//     return 2;
+//   case '^':
+//     return 3;
+//   default:
+//     return 0;
+//   }
+// }
+// int main(void)
+// {
+//   char infix[size];
+//   fgets(infix, size, stdin);
+
+//   infix[strlen(infix)] = '\0';
+
+//   for (int i = 0; infix[i] != '\0'; i++)
+//   {
+//     if (infix[i] == ' ' || infix[i] == '\t')
+//       continue;
+//     if ((infix[i] >= '0' && infix[i] <= '9') || (infix[i] >= 'a' && infix[i] <= 'z') || (infix[i] >= 'A' && infix[i] <= 'Z'))
+//     {
+//       printf("%c", infix[i]);
+//     }
+//     else if (infix[i] == '(')
+//     {
+//       push(infix[i]);
+//     }
+//     else if (infix[i] == ')')
+//     {
+//       while (top != -1 && peek() != '(')
+//       {
+//         printf("%c", pop());
+//       }
+//       pop();
+//     }
+//     else if (isOperator(infix[i]))
+//     {
+//       while (top != -1 && precedence(peek()) >= precedence(infix[i]))
+//       {
+//         printf("%c", pop());
+//       }
+//       push(infix[i]);
+//     }
+//   }
+
+//   while (top != -1)
+//     printf("%c", pop());
+// }
+
