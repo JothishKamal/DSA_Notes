@@ -106,13 +106,13 @@
 
 // // N Queen Problem
 // #include <stdio.h>
-// #define BOARD_SIZE 4
+// #define N 4
 
-// void displayChess(int chBoard[BOARD_SIZE][BOARD_SIZE])
+// void displayChess(int chBoard[N][N])
 // {
-//   for (int i = 0; i < BOARD_SIZE; i++)
+//   for (int i = 0; i < N; i++)
 //   {
-//     for (int j = 0; j < BOARD_SIZE; j++)
+//     for (int j = 0; j < N; j++)
 //     {
 //       printf("%d ", chBoard[i][j]);
 //     }
@@ -120,7 +120,7 @@
 //   }
 // }
 
-// int isQueenPlaceValid(int chBoard[BOARD_SIZE][BOARD_SIZE], int row, int col)
+// int isQueenPlaceValid(int chBoard[N][N], int row, int col)
 // {
 //   for (int i = 0; i < col; i++)
 //   {
@@ -134,7 +134,7 @@
 //       return 0;
 //   }
 
-//   for (int i = row, j = col; i < BOARD_SIZE && j >= 0; i++, j--)
+//   for (int i = row, j = col; i < N && j >= 0; i++, j--)
 //   {
 //     if (chBoard[i][j])
 //       return 0;
@@ -143,12 +143,12 @@
 //   return 1;
 // }
 
-// int solveNQueen(int chBoard[BOARD_SIZE][BOARD_SIZE], int col)
+// int solveNQueen(int chBoard[N][N], int col)
 // {
-//   if (col >= BOARD_SIZE)
+//   if (col >= N)
 //     return 1;
 
-//   for (int i = 0; i < BOARD_SIZE; i++)
+//   for (int i = 0; i < N; i++)
 //   {
 //     if (isQueenPlaceValid(chBoard, i, col))
 //     {
@@ -166,7 +166,7 @@
 
 // int main()
 // {
-//   int chBoard[BOARD_SIZE][BOARD_SIZE] = {0};
+//   int chBoard[N][N] = {0};
 
 //   if (solveNQueen(chBoard, 0) == 0)
 //   {
@@ -244,5 +244,149 @@
 //                      {1, 0, 1, 0}};
 //   int m = 3;
 //   graphColoring(graph, m);
+//   return 0;
+// }
+
+// // Matrix Chain Multiplication using Dynamic Programming
+// #include <stdio.h>
+// #include <limits.h>
+
+// void matrixChainMultiplication(int d[], int n)
+// {
+//   int size = n - 1;
+//   int m[size][size];
+//   int s[size][size];
+
+//   for (int i = 0; i < size; i++)
+//   {
+//     m[i][i] = 0;
+//   }
+
+//   for (int chain_len = 2; chain_len <= size; chain_len++)
+//   {
+//     for (int i = 0; i <= size - chain_len; i++)
+//     {
+//       int j = i + chain_len - 1;
+//       m[i][j] = INT_MAX;
+
+//       for (int k = i; k < j; k++)
+//       {
+//         int cost = m[i][k] + m[k + 1][j] +
+//                    d[i] * d[k + 1] * d[j + 1];
+
+//         if (cost < m[i][j])
+//         {
+//           m[i][j] = cost;
+//           s[i][j] = k;
+//         }
+//       }
+//     }
+//   }
+
+//   printf("Minimum number of multiplications: %d\n", m[0][size - 1]);
+
+//   printf("Optimal parenthesization: ");
+
+//   void printOptimalParens(int s[size][size], int i, int j)
+//   {
+//     if (i == j)
+//     {
+//       printf("A%d", i + 1);
+//     }
+//     else
+//     {
+//       printf("(");
+//       printOptimalParens(s, i, s[i][j]);
+//       printf(" x ");
+//       printOptimalParens(s, s[i][j] + 1, j);
+//       printf(")");
+//     }
+//   }
+
+//   printOptimalParens(s, 0, size - 1);
+//   printf("\n");
+// }
+
+// int main()
+// {
+//   int n;
+//   printf("Enter number of matrices: ");
+//   scanf("%d", &n);
+
+//   int d[n + 1];
+//   printf("Enter d of matrices (n+1 values):\n");
+//   for (int i = 0; i <= n; i++)
+//   {
+//     scanf("%d", &d[i]);
+//   }
+
+//   matrixChainMultiplication(d, n + 1);
+//   return 0;
+// }
+
+// // 0/1 Knapsack using Dynamic Programming
+// #include <stdio.h>
+
+// int max(int a, int b)
+// {
+//   return (a > b) ? a : b;
+// }
+
+// void knapsack01(int values[], int weights[], int n, int capacity)
+// {
+//   int dp[n + 1][capacity + 1];
+
+//   for (int i = 0; i <= n; i++)
+//   {
+//     for (int w = 0; w <= capacity; w++)
+//     {
+//       if (i == 0 || w == 0)
+//         dp[i][w] = 0;
+//       else if (weights[i - 1] <= w)
+
+//         dp[i][w] = max(values[i - 1] + dp[i - 1][w - weights[i - 1]], dp[i - 1][w]);
+//       else
+//         dp[i][w] = dp[i - 1][w];
+//     }
+//   }
+
+//   int max_value = dp[n][capacity];
+//   printf("Maximum value: %d\n", max_value);
+
+//   printf("Selected items (weight, value):\n");
+//   int w = capacity;
+//   for (int i = n; i > 0 && max_value > 0; i--)
+//   {
+//     if (max_value != dp[i - 1][w])
+//     {
+
+//       printf("Item %d: (%d, %d)\n", i, weights[i - 1], values[i - 1]);
+//       max_value -= values[i - 1];
+//       w -= weights[i - 1];
+//     }
+//   }
+// }
+
+// int main()
+// {
+//   int n, capacity;
+
+//   printf("Enter number of items: ");
+//   scanf("%d", &n);
+
+//   int values[n], weights[n];
+
+//   printf("Enter values of items:\n");
+//   for (int i = 0; i < n; i++)
+//     scanf("%d", &values[i]);
+
+//   printf("Enter weights of items:\n");
+//   for (int i = 0; i < n; i++)
+//     scanf("%d", &weights[i]);
+
+//   printf("Enter knapsack capacity: ");
+//   scanf("%d", &capacity);
+
+//   knapsack01(values, weights, n, capacity);
 //   return 0;
 // }

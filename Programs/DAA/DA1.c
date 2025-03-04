@@ -1,114 +1,113 @@
 // // Fractional Knapsack Problem
 // #include <stdio.h>
-// #include <stdlib.h>
 
-// // Function to swap two elements
-// void swap(double *a, double *b)
+// typedef struct
 // {
-//   double t = *a;
-//   *a = *b;
-//   *b = t;
-// }
+//   double weight;
+//   double profit;
+//   double ratio;
+// } Item;
 
-// void swapInt(int *a, int *b)
+// // Partition function for quicksort
+// int partition(Item it[], int l, int h)
 // {
-//   int t = *a;
-//   *a = *b;
-//   *b = t;
-// }
+//   double pivot = it[h].ratio;
+//   int i = l - 1;
 
-// // Function to sort arrays based on ratio using quicksort
-// void quickSortAll(double ratio[], double w[], double P[], int index[], int low, int high)
-// {
-//   if (low < high)
+//   for (int j = l; j < h; j++)
 //   {
-//     double pivot = ratio[high];
-//     int i = low - 1;
-//     for (int j = low; j <= high - 1; j++)
+//     // For descending order: it[j].ratio > pivot
+//     if (it[j].ratio > pivot)
 //     {
-//       if (ratio[j] > pivot)
-//       {
-//         i++;
-//         swap(&ratio[i], &ratio[j]);
-//         swap(&w[i], &w[j]);
-//         swap(&P[i], &P[j]);
-//         swapInt(&index[i], &index[j]);
-//       }
+//       i++;
+//       // Swap it[i] and it[j]
+//       Item temp = it[i];
+//       it[i] = it[j];
+//       it[j] = temp;
 //     }
-//     swap(&ratio[i + 1], &ratio[high]);
-//     swap(&w[i + 1], &w[high]);
-//     swap(&P[i + 1], &P[high]);
-//     swapInt(&index[i + 1], &index[high]);
-//     int pi = i + 1;
-//     quickSortAll(ratio, w, P, index, low, pi - 1);
+//   }
 
-//     quickSortAll(ratio, w, P, index, pi + 1, high);
+//   // Swap it[i+1] and it[h]
+//   Item temp = it[i + 1];
+//   it[i + 1] = it[h];
+//   it[h] = temp;
+
+//   return i + 1;
+// }
+
+// // QuickSort implementation for it by ratio (descending)
+// void quickSortByRatio(Item it[], int l, int h)
+// {
+//   if (l < h)
+//   {
+//     int pi = partition(it, l, h);
+
+//     quickSortByRatio(it, l, pi - 1);
+//     quickSortByRatio(it, pi + 1, h);
 //   }
 // }
 
 // int main()
 // {
-//   int n;
+//   int n, capacity;
+
+//   printf("Enter number of it: ");
 //   scanf("%d", &n);
-//   int M;
-//   scanf("%d", &M);
 
-//   double w[n], P[n];
-//   for (int i = 0; i < n; i++)
-//     scanf("%lf %lf", &w[i], &P[i]);
+//   printf("Enter knapsack capacity: ");
+//   scanf("%d", &capacity);
 
-//   double ratio[n];
-//   int index[n];
+//   Item it[n];
+
+//   // Input weights and profits
+//   printf("Enter weight and profit for each item:\n");
 //   for (int i = 0; i < n; i++)
 //   {
-//     ratio[i] = P[i] / w[i];
-//     index[i] = i;
+//     scanf("%lf %lf", &it[i].weight, &it[i].profit);
+//     it[i].ratio = it[i].profit / it[i].weight;
 //   }
 
-//   printf("Before Sorting: \n");
-//   for (int i = 0; i < n; i++)
-//     printf("w[%d] = %.2f, P[%d] = %.2f, P[%d] / w[%d] = %.2f\n",
-//            i, w[i], i, P[i], i, i, ratio[i]);
+//   // Sort by profit/weight ratio using QuickSort
+//   quickSortByRatio(it, 0, n - 1);
 
-//   quickSortAll(ratio, w, P, index, 0, n - 1);
-
-//   printf("\nAfter Sorting: \n");
-//   for (int i = 0; i < n; i++)
-//     printf("w[%d] = %.2f, P[%d] = %.2f, P[%d] / w[%d] = %.2f\n",
-//            i, w[i], i, P[i], i, i, ratio[i]);
-
-//   double max_profit = 0.0;
-//   double remaining_capacity = M;
+//   double maxProfit = 0.0;
+//   double remainingCapacity = capacity;
 
 //   printf("\nOptimal Solution:\n");
-//   printf("Weight\tProfit\tFraction Taken\n");
+//   printf("Weight\tProfit\tFraction\n");
 
+//   // Greedy selection
 //   for (int i = 0; i < n; i++)
 //   {
 //     double fraction;
-//     if (w[i] <= remaining_capacity)
+
+//     if (it[i].weight <= remainingCapacity)
 //     {
+//       // Take the whole item
 //       fraction = 1.0;
-//       max_profit += P[i];
-//       remaining_capacity -= w[i];
+//       maxProfit += it[i].profit;
+//       remainingCapacity -= it[i].weight;
 //     }
 //     else
 //     {
-//       fraction = remaining_capacity / w[i];
-//       max_profit += P[i] * fraction;
-//       remaining_capacity = 0;
+//       // Take a fraction of the item
+//       fraction = remainingCapacity / it[i].weight;
+//       maxProfit += it[i].profit * fraction;
+//       remainingCapacity = 0;
 //     }
 
 //     if (fraction > 0)
 //     {
-//       printf("%.2f\t%.2f\t%.2f\n", w[i], P[i], fraction);
+//       printf("%.2f\t%.2f\t%.2f\n",
+//              it[i].weight, it[i].profit, fraction);
 //     }
 
-//     if (remaining_capacity == 0)
+//     if (remainingCapacity == 0)
 //       break;
 //   }
 
-//   printf("\nMaximum profit: %.2f\n", max_profit);
+//   printf("\nMaximum profit: %.2f\n", maxProfit);
+
 //   return 0;
 // }
 
@@ -331,12 +330,12 @@
 //   return max(max(a, b), c);
 // }
 
-// int findMaxCrossingSum(int arr[], int low, int mid, int high)
+// int findMaxCrossingSum(int arr[], int l, int mid, int h)
 // {
 //   int sum = 0;
 //   int left_sum = INT_MIN;
 //   int max_left = mid;
-//   for (int i = mid; i >= low; i--)
+//   for (int i = mid; i >= l; i--)
 //   {
 //     sum += arr[i];
 //     if (sum > left_sum)
@@ -348,7 +347,7 @@
 //   sum = 0;
 //   int right_sum = INT_MIN;
 //   int max_right = mid + 1;
-//   for (int i = mid + 1; i <= high; i++)
+//   for (int i = mid + 1; i <= h; i++)
 //   {
 //     sum += arr[i];
 //     if (sum > right_sum)
@@ -369,16 +368,16 @@
 //   return left_sum + right_sum;
 // }
 
-// int maxSubArraySum(int arr[], int low, int high)
+// int maxSubArraySum(int arr[], int l, int h)
 // {
-//   if (low == high)
+//   if (l == h)
 //   {
-//     return arr[low];
+//     return arr[l];
 //   }
-//   int mid = (low + high) / 2;
-//   int left_sum = maxSubArraySum(arr, low, mid);
-//   int right_sum = maxSubArraySum(arr, mid + 1, high);
-//   int crossing_sum = findMaxCrossingSum(arr, low, mid, high);
+//   int mid = (l + h) / 2;
+//   int left_sum = maxSubArraySum(arr, l, mid);
+//   int right_sum = maxSubArraySum(arr, mid + 1, h);
+//   int crossing_sum = findMaxCrossingSum(arr, l, mid, h);
 //   printf("Maximum of left: %d, right: %d, crossing: %d\n", left_sum, right_sum, crossing_sum);
 //   return max3(left_sum, right_sum, crossing_sum);
 // }
@@ -423,15 +422,15 @@
 
 // struct SplitNumber
 // {
-//   long long high;
-//   long long low;
+//   long long h;
+//   long long l;
 // };
 
 // struct SplitNumber splitNumber(long long num, int m)
 // {
 //   struct SplitNumber result;
-//   result.high = num / (long long)pow(10, m);
-//   result.low = num % (long long)pow(10, m);
+//   result.h = num / (long long)pow(10, m);
+//   result.l = num % (long long)pow(10, m);
 //   return result;
 // }
 
@@ -450,15 +449,15 @@
 //   struct SplitNumber split_y = splitNumber(y, m);
 
 //   printf("\nSplit numbers into halves:");
-//   printf("\nX = %lld: High = %lld, Low = %lld",
-//          x, split_x.high, split_x.low);
-//   printf("\nY = %lld: High = %lld, Low = %lld",
-//          y, split_y.high, split_y.low);
+//   printf("\nX = %lld: h = %lld, l = %lld",
+//          x, split_x.h, split_x.l);
+//   printf("\nY = %lld: h = %lld, l = %lld",
+//          y, split_y.h, split_y.l);
 
-//   long long z0 = karatsuba(split_x.low, split_y.low);
-//   long long z1 = karatsuba((split_x.low + split_x.high),
-//                            (split_y.low + split_y.high));
-//   long long z2 = karatsuba(split_x.high, split_y.high);
+//   long long z0 = karatsuba(split_x.l, split_y.l);
+//   long long z1 = karatsuba((split_x.l + split_x.h),
+//                            (split_y.l + split_y.h));
+//   long long z2 = karatsuba(split_x.h, split_y.h);
 
 //   // Rest of the function remains same
 //   return (z2 * pow(10, 2 * m)) +
