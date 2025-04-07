@@ -158,70 +158,70 @@
 //   return 0;
 // }
 
-// Graham's Scan Algorithm
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+// // Graham's Scan Algorithm
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <math.h>
 
-typedef struct
-{
-  int x, y;
-} Point;
+// typedef struct
+// {
+//   int x, y;
+// } Point;
 
-Point p0;
+// Point p0;
 
-int compare(const void *vp1, const void *vp2)
-{
-  Point *p1 = (Point *)vp1, *p2 = (Point *)vp2;
-  int val = (p1->x - p0.x) * (p2->y - p0.y) - (p2->x - p0.x) * (p1->y - p0.y);
-  if (val == 0)
-    return (p1->x * p1->x + p1->y * p1->y) < (p2->x * p2->x + p2->y * p2->y) ? -1 : 1;
-  return (val > 0) ? -1 : 1;
-}
+// int compare(const void *vp1, const void *vp2)
+// {
+//   Point *p1 = (Point *)vp1, *p2 = (Point *)vp2;
+//   int val = (p1->x - p0.x) * (p2->y - p0.y) - (p2->x - p0.x) * (p1->y - p0.y);
+//   if (val == 0)
+//     return (p1->x * p1->x + p1->y * p1->y) < (p2->x * p2->x + p2->y * p2->y) ? -1 : 1;
+//   return (val > 0) ? -1 : 1;
+// }
 
-int orientation(Point a, Point b, Point c)
-{
-  int val = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
-  return val > 0 ? 1 : (val < 0) ? -1
-                                 : 0;
-}
+// int orientation(Point a, Point b, Point c)
+// {
+//   int val = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
+//   return val > 0 ? 1 : (val < 0) ? -1
+//                                  : 0;
+// }
 
-void convexHull(Point points[], int n)
-{
-  int minY = 0;
-  for (int i = 1; i < n; i++)
-    if (points[i].y < points[minY].y || (points[i].y == points[minY].y &&
-                                         points[i].x < points[minY].x))
-      minY = i;
+// void convexHull(Point points[], int n)
+// {
+//   int minY = 0;
+//   for (int i = 1; i < n; i++)
+//     if (points[i].y < points[minY].y || (points[i].y == points[minY].y &&
+//                                          points[i].x < points[minY].x))
+//       minY = i;
 
-  Point temp = points[0];
-  points[0] = points[minY];
-  points[minY] = temp;
-  p0 = points[0];
+//   Point temp = points[0];
+//   points[0] = points[minY];
+//   points[minY] = temp;
+//   p0 = points[0];
 
-  qsort(&points[1], n - 1, sizeof(Point), compare);
+//   qsort(&points[1], n - 1, sizeof(Point), compare);
 
-  Point hull[n];
-  int hullSize = 0;
-  for (int i = 0; i < n; i++)
-  {
-    while (hullSize >= 2 && orientation(hull[hullSize - 2], hull[hullSize - 1], points[i]) != -1)
-      hullSize--;
-    hull[hullSize++] = points[i];
-  }
+//   Point hull[n];
+//   int hullSize = 0;
+//   for (int i = 0; i < n; i++)
+//   {
+//     while (hullSize >= 2 && orientation(hull[hullSize - 2], hull[hullSize - 1], points[i]) != -1)
+//       hullSize--;
+//     hull[hullSize++] = points[i];
+//   }
 
-  printf("Convex Hull:\n");
-  for (int i = 0; i < hullSize; i++)
-    printf("(%d, %d)\n", hull[i].x, hull[i].y);
-}
+//   printf("Convex Hull:\n");
+//   for (int i = 0; i < hullSize; i++)
+//     printf("(%d, %d)\n", hull[i].x, hull[i].y);
+// }
 
-int main()
-{
-  Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}, {3, 3}};
-  int n = sizeof(points) / sizeof(points[0]);
-  convexHull(points, n);
-  return 0;
-}
+// int main()
+// {
+//   Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}, {3, 3}};
+//   int n = sizeof(points) / sizeof(points[0]);
+//   convexHull(points, n);
+//   return 0;
+// }
 
 // // Jarvis's March Algorithm
 // #include <stdio.h>
