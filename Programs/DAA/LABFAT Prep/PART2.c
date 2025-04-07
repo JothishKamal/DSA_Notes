@@ -214,7 +214,7 @@
 //   return 0;
 // }
 
-// Ford-Fulkerson Algorithm
+// Ford-Fulkerson & Edmonds-Karp Algorithm
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
