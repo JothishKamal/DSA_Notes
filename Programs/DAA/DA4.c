@@ -1,82 +1,82 @@
-// Ford Fulkerson Algorithm
-#include <stdio.h>
-#include <limits.h>
-#include <string.h>
-#include <stdbool.h>
+// // Ford Fulkerson Algorithm
+// #include <stdio.h>
+// #include <limits.h>
+// #include <string.h>
+// #include <stdbool.h>
 
-#define V 7
+// #define V 7
 
-int bfs(int rGraph[V][V], int s, int t, int parent[])
-{
-  bool visited[V];
-  memset(visited, 0, sizeof(visited));
+// int bfs(int rGraph[V][V], int s, int t, int parent[])
+// {
+//   bool visited[V];
+//   memset(visited, 0, sizeof(visited));
 
-  int queue[V], front = 0, rear = 0;
-  queue[rear++] = s;
-  visited[s] = true;
-  parent[s] = -1;
+//   int queue[V], front = 0, rear = 0;
+//   queue[rear++] = s;
+//   visited[s] = true;
+//   parent[s] = -1;
 
-  while (front < rear)
-  {
-    int u = queue[front++]; 
-    for (int v = 0; v < V; v++)
-    {
-      if (!visited[v] && rGraph[u][v] > 0)
-      {
-        queue[rear++] = v;
-        parent[v] = u;
-        visited[v] = true;
-        if (v == t)
-          return 1;
-      }
-    }
-  }
-  return 0;
-}
+//   while (front < rear)
+//   {
+//     int u = queue[front++]; 
+//     for (int v = 0; v < V; v++)
+//     {
+//       if (!visited[v] && rGraph[u][v] > 0)
+//       {
+//         queue[rear++] = v;
+//         parent[v] = u;
+//         visited[v] = true;
+//         if (v == t)
+//           return 1;
+//       }
+//     }
+//   }
+//   return 0;
+// }
 
-int fordFulkerson(int graph[V][V], int s, int t)
-{
-  int u, v, rGraph[V][V], parent[V], max_flow = 0;
+// int fordFulkerson(int graph[V][V], int s, int t)
+// {
+//   int u, v, rGraph[V][V], parent[V], max_flow = 0;
 
-  memcpy(rGraph, graph, sizeof(rGraph));
+//   memcpy(rGraph, graph, sizeof(rGraph));
 
-  while (bfs(rGraph, s, t, parent))
-  {
-    int path_flow = INT_MAX;
+//   while (bfs(rGraph, s, t, parent))
+//   {
+//     int path_flow = INT_MAX;
 
-    for (v = t; v != s; v = parent[v])
-    {
-      u = parent[v];
-      if (rGraph[u][v] < path_flow)
-        path_flow = rGraph[u][v];
-    }
+//     for (v = t; v != s; v = parent[v])
+//     {
+//       u = parent[v];
+//       if (rGraph[u][v] < path_flow)
+//         path_flow = rGraph[u][v];
+//     }
 
-    for (v = t; v != s; v = parent[v])
-    {
-      u = parent[v];
-      rGraph[u][v] -= path_flow;
-      rGraph[v][u] += path_flow;
-    }
+//     for (v = t; v != s; v = parent[v])
+//     {
+//       u = parent[v];
+//       rGraph[u][v] -= path_flow;
+//       rGraph[v][u] += path_flow;
+//     }
 
-    max_flow += path_flow;
-  }
-  return max_flow;
-}
+//     max_flow += path_flow;
+//   }
+//   return max_flow;
+// }
 
-int main()
-{
-  int graph[V][V] = {
-      {0, 7, 0, 0, 10, 0, 0},
-      {0, 0, 5, 0, 1, 3, 0},
-      {0, 0, 0, 2, 0, 0, 10},
-      {0, 0, 0, 0, 0, 0, 4},
-      {0, 0, 0, 7, 0, 2, 0},
-      {0, 0, 3, 2, 0, 0, 0},
-      {0, 0, 0, 0, 0, 0, 0}};
+// int main()
+// {
+//   int graph[V][V] = {
+//       {0, 7, 0, 0, 10, 0, 0},
+//       {0, 0, 5, 0, 1, 3, 0},
+//       {0, 0, 0, 2, 0, 0, 10},
+//       {0, 0, 0, 0, 0, 0, 4},
+//       {0, 0, 0, 7, 0, 2, 0},
+//       {0, 0, 3, 2, 0, 0, 0},
+//       {0, 0, 0, 0, 0, 0, 0}};
 
-  printf("The maximum possible flow is %d\n", fordFulkerson(graph, 0, 5));
-  return 0;
-}
+//   printf("The maximum possible flow is %d\n", fordFulkerson(graph, 0, 5));
+//   return 0;
+// }
 
 // // Edmonds-Karp Algorithm
 // #include <stdio.h>

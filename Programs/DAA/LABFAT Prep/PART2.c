@@ -237,7 +237,7 @@ int bfs(int rGraph[V][V], int s, int t, int parent[])
     int u = queue[front++];
     for (int v = 0; v < V; v++)
     {
-      if (!visited[V] && rGraph[u][v] > 0)
+      if (!visited[v] && rGraph[u][v] > 0)
       {
         queue[rear++] = v;
         parent[v] = u;
@@ -263,7 +263,6 @@ int fordFulkerson(int graph[V][V], int s, int t)
     for (v = t; v != s; v = parent[v])
     {
       u = parent[v];
-
       if (rGraph[u][v] < path_flow)
         path_flow = rGraph[u][v];
     }
@@ -277,11 +276,10 @@ int fordFulkerson(int graph[V][V], int s, int t)
 
     max_flow += path_flow;
   }
-
   return max_flow;
 }
 
-int main(void)
+int main()
 {
   int graph[V][V] = {
       {0, 7, 0, 0, 10, 0, 0},
