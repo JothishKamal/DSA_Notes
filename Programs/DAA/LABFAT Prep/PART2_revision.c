@@ -35,19 +35,16 @@ void bellmanFord(struct Edge edges[], int src)
     }
   }
 
-  for (int i = 0; i < V - 1; i++)
+  for (int j = 0; j < E; j++)
   {
-    for (int j = 0; j < E; j++)
-    {
-      int u = edges[j].src;
-      int v = edges[j].dest;
-      int weight = edges[j].weight;
+    int u = edges[j].src;
+    int v = edges[j].dest;
+    int weight = edges[j].weight;
 
-      if (dist[u] != INT_MAX && dist[u] + weight < dist[v])
-      {
-        printf("Graph contains a negative weight cycle\n");
-        return;
-      }
+    if (dist[u] != INT_MAX && dist[u] + weight < dist[v])
+    {
+      printf("Graph contains a negative weight cycle\n");
+      return;
     }
   }
 
@@ -209,7 +206,7 @@ int main(void)
   printf("Pattern to find: %s\n\n", pattern);
 
   KMPSearch(pattern, text);
-  RabinKarpSearch(pattern, text);
+  // RabinKarpSearch(pattern, text);
   return 0;
 }
 
@@ -306,11 +303,11 @@ Point p0;
 
 int compare(const void *vp1, const void *vp2)
 {
-  Point *p1 = (Point *)vp1, *p2 = (Point *)vp2;
+  Point p1 = *(Point *)vp1, p2 = *(Point *)vp2;
 
-  int val = (p1->x - p0.x) * (p2->y - p0.y) - (p2->x - p0.x) * (p1->y - p0.y);
+  int val = (p1.x - p0.x) * (p2.y - p0.y) - (p2.x - p0.x) * (p1.y - p0.y);
   if (val == 0)
-    return (p1->x * p1->x + p1->y * p1->y) < (p2->x * p2->x + p2->y * p2->y) ? -1 : 1;
+    return (p1.x * p1.x + p1.y * p1.y < p2.x * p2.x + p2.y * p2.y) ? -1 : 1;
   return (val > 0) ? -1 : 1;
 }
 
